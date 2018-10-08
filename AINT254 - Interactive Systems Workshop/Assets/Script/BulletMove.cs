@@ -24,5 +24,7 @@ public class BulletMove : MonoBehaviour {
 
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
 
+        Destroy(bullet, 5.0f);
+
     }
 }
