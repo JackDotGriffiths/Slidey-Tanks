@@ -745,7 +745,7 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884043090}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: be9f9a5eaeb67ee4290ffee5cf3d4c9e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -817,6 +817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020729283}
   - component: {fileID: 1020729284}
+  - component: {fileID: 1020729285}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -854,8 +855,24 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1020729285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020729282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7d76bb0b5404041ae4f12a1b5a4c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousePosition: {x: 0, y: 0, z: 0}
+  Tank: {fileID: 1020729284}
+  RayHitPoint: {x: 0, y: 0, z: 0}
+  MouseTarget: {x: 0, y: 0, z: 0}
+  recoilDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &1131909690
 GameObject:
   m_ObjectHideFlags: 0
