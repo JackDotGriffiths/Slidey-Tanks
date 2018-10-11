@@ -13,6 +13,7 @@ public class BulletFire: MonoBehaviour {
         {
             FireBullet();
         }
+   
     }
 
 
