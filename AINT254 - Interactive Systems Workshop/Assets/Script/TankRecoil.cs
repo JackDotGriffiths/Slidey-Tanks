@@ -17,7 +17,6 @@ public class TankRecoil : MonoBehaviour {
             Recoil();
         }
 	}
-
     void GetMousePos()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
