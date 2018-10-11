@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletFire: MonoBehaviour {
 
+    public GameObject tankBody;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
@@ -21,7 +22,6 @@ public class BulletFire: MonoBehaviour {
         bulletPrefab,
         bulletSpawn.position,
         bulletSpawn.rotation);
-
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
 
         Destroy(bullet, 5.0f);

@@ -27,12 +27,9 @@ public class TankRecoil : MonoBehaviour {
         }
 
         MouseTarget = new Vector3(RayHitPoint.x, transform.position.y, RayHitPoint.z);
-
-        //Reverses the Vector as to give the direction of the recoil push.
-        recoilDirection = new Vector3(MouseTarget.x * -1, MouseTarget.y * -1, MouseTarget.z * -1);
     }
     void Recoil()
     {
-        Tank.AddForce(recoilDirection * 50);
+        Tank.AddForce(-MouseTarget.normalized * 500);
     }
 }

@@ -16,9 +16,5 @@ public class BarrelFollowMouse : MonoBehaviour {
 
         //Force the barrel to rotate towards the mouse pointer, only changing the Y axis so that it stays on a singular plane.
         transform.LookAt(new Vector3(RayHitPoint.x, transform.position.y, RayHitPoint.z));
-
-        if (Input.GetMouseButton(0)) {
-            tankBody.transform.LookAt(new Vector3(RayHitPoint.x, transform.position.y, RayHitPoint.z));
-        }
     }
 }
