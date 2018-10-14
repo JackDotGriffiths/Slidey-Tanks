@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankRecoil : MonoBehaviour {
     public Vector3 mousePosition;
@@ -8,14 +9,10 @@ public class TankRecoil : MonoBehaviour {
 
     public Vector3 RayHitPoint;
     public Vector3 MouseTarget;
-    public Vector3 recoilDirection;
+
 
 	void Update () {
         GetMousePos();
-		if (Input.GetMouseButtonDown(0))
-        {
-            Recoil();
-        }
 	}
     void GetMousePos()
     {
@@ -26,10 +23,11 @@ public class TankRecoil : MonoBehaviour {
             RayHitPoint = hit.point;
         }
 
-        MouseTarget = new Vector3(RayHitPoint.x, transform.position.y, RayHitPoint.z);
+        MouseTarget = new Vector3(RayHitPoint.x, RayHitPoint.y, RayHitPoint.z);
     }
-    void Recoil()
+    public void Recoil()
     {
-        Tank.AddForce(-MouseTarget.normalized * 500);
+       Debug.Log("Recoil");
+       Tank.AddForce(-MouseTarget.normalized * 500);
     }
 }

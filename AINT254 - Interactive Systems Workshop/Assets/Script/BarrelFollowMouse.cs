@@ -5,8 +5,9 @@ using UnityEngine;
 public class BarrelFollowMouse : MonoBehaviour {
     public Vector3 RayHitPoint;
     public GameObject tankBody;
-
     void Update () {
+
+    
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))

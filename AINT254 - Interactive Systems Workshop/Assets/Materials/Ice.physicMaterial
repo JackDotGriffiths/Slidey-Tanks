@@ -6,8 +6,8 @@ PhysicMaterial:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Ice
-  dynamicFriction: 0.56
-  staticFriction: 3.15
+  dynamicFriction: 0.9
+  staticFriction: 1.9
   bounciness: 0
   frictionCombine: 0
   bounceCombine: 0
