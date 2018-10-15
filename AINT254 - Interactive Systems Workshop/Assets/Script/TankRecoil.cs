@@ -18,9 +18,10 @@ public class TankRecoil : MonoBehaviour {
 	}
     void GetMousePos()
     {
+        var layermask = LayerMask.GetMask("WallIgnore");
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit,layermask))
         {
             RayHitPoint = hit.point;
         }
