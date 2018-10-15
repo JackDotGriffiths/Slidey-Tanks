@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankBody: {fileID: 802179207}
   Tank: {fileID: 559244952}
-  bulletPrefab: {fileID: 1845552351261924, guid: 1b6800d991a4fa443870fadcc13039d5,
+  bulletPrefab: {fileID: 1641047176725558, guid: 5555467a53e1ac34d92f6ef6089735f0,
     type: 2}
   bulletSpawn: {fileID: 2115293120}
   ReloadTimer: {fileID: 1741671179}
