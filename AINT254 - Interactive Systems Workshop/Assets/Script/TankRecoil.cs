@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class TankRecoil : MonoBehaviour {
     public Vector3 mousePosition;
     public Rigidbody Tank;
+    private GameObject barrelEnd;
 
     public Vector3 RayHitPoint;
     public Vector3 MouseTarget;
+    private Vector3 m_direction;
 
 
 	void Update () {
@@ -23,11 +25,12 @@ public class TankRecoil : MonoBehaviour {
             RayHitPoint = hit.point;
         }
 
-        MouseTarget = new Vector3(RayHitPoint.x, RayHitPoint.y, RayHitPoint.z);
+        MouseTarget = new Vector3(RayHitPoint.x, Tank.transform.position.y, RayHitPoint.z);
+        m_direction = Tank.transform.position - MouseTarget;
     }
     public void Recoil()
     {
        Debug.Log("Recoil");
-       Tank.AddForce(-MouseTarget.normalized * 500);
+       Tank.AddForce(m_direction.normalized * 500);
     }
 }
