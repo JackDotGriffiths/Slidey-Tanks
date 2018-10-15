@@ -11,6 +11,8 @@ public class BulletFire: MonoBehaviour {
     public Transform bulletSpawn;
     public Image ReloadTimer;
 
+    public AudioClip Shoot;
+
     public static bool FiredBullet;
 
     void Update() {
@@ -33,9 +35,11 @@ public class BulletFire: MonoBehaviour {
             bulletSpawn.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
             ReloadTimer.fillAmount = 0;
+            GetComponent<AudioSource>().clip = Shoot;
+            GetComponent<AudioSource>().Play();
             Tank.GetComponent<TankRecoil>().Recoil();
             Destroy(bullet, 5.0f);
-            
+
         }
     }
 }
