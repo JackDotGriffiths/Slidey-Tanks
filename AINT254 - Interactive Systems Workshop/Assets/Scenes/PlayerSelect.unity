@@ -1929,7 +1929,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1678313002}
-  m_Text: Multiplayer
+  m_Text: multiplayer
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -2647,7 +2647,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049977095}
-  m_Text: SinglePlayer
+  m_Text: singleplayer
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
