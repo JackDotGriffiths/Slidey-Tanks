@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Walls
+  - Player1
+  - Player2
+  - Player1Bullet
+  - Player2Bullet
   layers:
   - Default
   - TransparentFX
