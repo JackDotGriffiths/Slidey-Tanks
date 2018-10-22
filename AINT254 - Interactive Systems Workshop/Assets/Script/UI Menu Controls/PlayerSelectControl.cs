@@ -8,6 +8,7 @@ public class PlayerSelectControl : MonoBehaviour {
 
     public Button m_OnePlayerSelect;
     public Button m_TwoPlayerSelect;
+    public Button Quitgame;
     public Canvas m_UICanvas;
 
     public Scene Prototype;
@@ -21,11 +22,14 @@ public class PlayerSelectControl : MonoBehaviour {
         m_OnePlayerSelect.GetComponent<RectTransform>().sizeDelta= new Vector2(Width/2, m_OnePlayerSelect.GetComponent<RectTransform>().rect.height);
         m_TwoPlayerSelect.GetComponent<RectTransform>().sizeDelta = new Vector2(Width/2, m_TwoPlayerSelect.GetComponent<RectTransform>().rect.height);
 
+
         Button button1 = m_OnePlayerSelect.GetComponent<Button>();
         Button button2 = m_TwoPlayerSelect.GetComponent<Button>();
+        Button Quit = Quitgame.GetComponent<Button>();
 
         button1.onClick.AddListener(OnePlayerStart);
         button2.onClick.AddListener(TwoPlayerStart);
+        Quit.onClick.AddListener(ExitGame);
 	}
 	
 	// Update is called once per frame
@@ -39,5 +43,11 @@ public class PlayerSelectControl : MonoBehaviour {
         Debug.Log("Start Two Player");
         SceneManager.LoadScene(1);
         SceneManager.UnloadSceneAsync(0);
+    }
+
+    void ExitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }
