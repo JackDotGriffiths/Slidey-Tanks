@@ -13,7 +13,6 @@ public class TankRecoil : MonoBehaviour {
 
     public void Recoil()
     {
-       Debug.Log("Recoil");
         m_direction = Tank.transform.position - barrelEnd.transform.position;
        Tank.AddForce(m_direction.normalized * 2000);
     }

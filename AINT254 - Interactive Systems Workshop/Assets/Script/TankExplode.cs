@@ -11,8 +11,8 @@ public class TankExplode : MonoBehaviour {
     public GameObject explodeAnimation;
     public GameObject winText;
     public GameObject buttonRestart;
-    public GameObject overlay;
-
+    public GameObject TankAudioSource;
+    public AudioClip TankExplodeSound;
 
 
 
@@ -20,6 +20,9 @@ public class TankExplode : MonoBehaviour {
     {
         if(other.tag == enemyBullet.tag)
         {
+            Debug.Log("Play Sound");
+            TankAudioSource.GetComponent<AudioSource>().clip = TankExplodeSound;
+            TankAudioSource.GetComponent<AudioSource>().PlayDelayed(0);
             ExplodeTank();
             Destroy(other);
         }
@@ -37,9 +40,9 @@ public class TankExplode : MonoBehaviour {
         buttonRestart.GetComponent<Button>().enabled = true;
         buttonRestart.GetComponent<Image>().enabled = true;
         buttonRestart.GetComponentInChildren<Text>().enabled = true;
-        overlay.GetComponent<Image>().enabled = true;
-        Time.timeScale = 0;
 
+
+        Destroy(Explode, 2f);
         Destroy(PlayerTank);
 
     }

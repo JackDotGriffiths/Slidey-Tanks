@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerSelectControl : MonoBehaviour {
 
     public Button m_OnePlayerSelect;
     public Button m_TwoPlayerSelect;
     public Canvas m_UICanvas;
+
+    public Scene Prototype;
 
 	// Use this for initialization
 	void Start () {
@@ -34,5 +37,7 @@ public class PlayerSelectControl : MonoBehaviour {
     void TwoPlayerStart()
     {
         Debug.Log("Start Two Player");
+        SceneManager.LoadScene(1);
+        SceneManager.UnloadSceneAsync(0);
     }
 }
