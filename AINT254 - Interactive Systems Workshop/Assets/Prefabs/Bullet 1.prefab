@@ -183,6 +183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 1292432395956278, guid: c009b456fa94c4a49b391d5d6b562ab9,
     type: 2}
+  bullet1: {fileID: 0}
+  bullet2: {fileID: 0}
 --- !u!136 &136588472192112988
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -205,7 +207,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.54
+  m_Radius: 0.6
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
