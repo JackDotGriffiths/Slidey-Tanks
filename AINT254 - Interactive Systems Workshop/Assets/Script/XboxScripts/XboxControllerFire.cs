@@ -10,9 +10,10 @@ public class XboxControllerFire : MonoBehaviour
     public GameObject Tank;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-    public Image ReloadTimer;
 
+    public Image ReloadTimer;
     public AudioClip Shoot;
+    public ParticleSystem smoke;
 
     public float shootAxis;
 
