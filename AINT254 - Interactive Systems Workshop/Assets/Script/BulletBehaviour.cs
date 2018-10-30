@@ -5,8 +5,6 @@ using UnityEngine;
 public class BulletBehaviour: MonoBehaviour {
 
     public GameObject destroyEffect;
-    public GameObject bullet1;
-    public GameObject bullet2;
 
 
     private void OnTriggerEnter(Collider other)

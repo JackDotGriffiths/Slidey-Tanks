@@ -19,6 +19,5 @@ public class RestartButtonControl : MonoBehaviour {
     void GoToMain()
     {
         SceneManager.LoadScene(0);
-        SceneManager.UnloadSceneAsync(1);
     }
 }

@@ -41,10 +41,19 @@ public class XboxControllerFire : MonoBehaviour
             bulletSpawn.position,
             bulletSpawn.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
+
+            //Play the BarrelSmoke effect.
+            smoke.Play();
+
+            //Reset the reload timer to 0
             ReloadTimer.fillAmount = 0;
+
+            //Play the firing noise
             GetComponent<AudioSource>().clip = Shoot;
             GetComponent<AudioSource>().Play();
             Tank.GetComponent<TankRecoil>().Recoil();
+
+            //Destroy the bullet after 5 seconds
             Destroy(bullet, 5.0f);
 
         }
