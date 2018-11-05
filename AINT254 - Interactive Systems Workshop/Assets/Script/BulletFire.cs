@@ -5,23 +5,38 @@ using UnityEngine.UI;
 
 public class BulletFire: MonoBehaviour {
 
+    public static float bulletPower;
+    public ParticleSystem ChargeShotBlue;
+
+
     public GameObject tankBody;
     public GameObject Tank;  
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
     public Image ReloadTimer;
+    public Image ShotChargedAmount;
     public AudioClip Shoot;
     public ParticleSystem smoke;
 
     public static bool FiredBullet;
 
+
     void Update() {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && ReloadTimer.fillAmount >= 1)
         {
-            FireBullet();
+            ShotChargedAmount.fillAmount += 0.01f;
+            bulletPower = ShotChargedAmount.fillAmount;
+            Debug.Log("Play ChargeShot");
+            ChargeShotBlue.Play();
         }
-   
+        if (Input.GetMouseButtonUp(0))
+        {
+            ShotChargedAmount.fillAmount = 0f;
+            FireBullet();
+            Debug.Log("Stop ChargeShot");
+            ChargeShotBlue.Stop();
+        }
     }
 
 
@@ -34,7 +49,7 @@ public class BulletFire: MonoBehaviour {
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7 * (1 + bulletPower);
 
             //Run the Barrel Smoke Particle effect.
             smoke.Play();
