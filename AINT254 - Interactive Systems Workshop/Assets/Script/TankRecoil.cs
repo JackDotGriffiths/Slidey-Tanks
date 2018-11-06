@@ -13,9 +13,14 @@ public class TankRecoil : MonoBehaviour {
 
     public void Recoil()
     {
+
         BulletFire bulletFire = GetComponent<BulletFire>();
+
         m_direction = Tank.transform.position - barrelEnd.transform.position;
-        Tank.AddForce(m_direction.normalized * 2500 * (1 + BulletFire.bulletPower));
-        Debug.Log(2000 * (1 + BulletFire.bulletPower));
+
+        float ForceValue = 1 + BulletFire.bulletPower;
+        Tank.AddForce(m_direction.normalized *800 * ForceValue);
+
+        Debug.Log(ForceValue * 800);
     }
 }

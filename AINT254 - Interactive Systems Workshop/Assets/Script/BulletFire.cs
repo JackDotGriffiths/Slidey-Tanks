@@ -25,16 +25,14 @@ public class BulletFire: MonoBehaviour {
     void Update() {
         if (Input.GetMouseButton(0) && ReloadTimer.fillAmount >= 1)
         {
-            ShotChargedAmount.fillAmount += 0.01f;
             bulletPower = ShotChargedAmount.fillAmount;
-            Debug.Log("Play ChargeShot");
+            ShotChargedAmount.fillAmount += 0.02f;
             ChargeShotBlue.Play();
         }
         if (Input.GetMouseButtonUp(0))
         {
             ShotChargedAmount.fillAmount = 0f;
             FireBullet();
-            Debug.Log("Stop ChargeShot");
             ChargeShotBlue.Stop();
         }
     }
