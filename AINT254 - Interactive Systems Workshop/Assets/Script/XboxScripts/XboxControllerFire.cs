@@ -5,29 +5,38 @@ using UnityEngine.UI;
 
 public class XboxControllerFire : MonoBehaviour
 {
-
+    public Image P2ShotChargedAmount;
     public GameObject tankBody;
     public GameObject Tank;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
-
     public Image ReloadTimer;
     public AudioClip Shoot;
     public ParticleSystem smoke;
-
     public float shootAxis;
 
+    public static float bulletPower;
 
+    private bool ReadyToFire = false;
 
     void Update()
     {
         shootAxis = Input.GetAxis("Player2Fire");
-        if (shootAxis>0)
-        { 
+        if (shootAxis > 0 && ReloadTimer.fillAmount >= 1)
+        {
+            ReadyToFire = true;
+            //As the button is held down, increase the fillAmount by 0.02 and keep bulletPower = FillAmount
+            P2ShotChargedAmount.fillAmount += 0.02f;
+            bulletPower = P2ShotChargedAmount.fillAmount;
+        }
+        if (shootAxis == 0 && ReadyToFire == true)
+        {
+            P2ShotChargedAmount.fillAmount = 0f;
+            ReadyToFire = false;
             FireBullet();
         }
-
     }
+
 
 
     // Use this for initialization
@@ -51,7 +60,7 @@ public class XboxControllerFire : MonoBehaviour
             //Play the firing noise
             GetComponent<AudioSource>().clip = Shoot;
             GetComponent<AudioSource>().Play();
-            Tank.GetComponent<TankRecoil>().Recoil();
+            Tank.GetComponent<XboxControllerTankRecoil>().Recoil();
 
             //Destroy the bullet after 5 seconds
             Destroy(bullet, 5.0f);

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class BulletFire: MonoBehaviour {
 
     public static float bulletPower;
-    public ParticleSystem ChargeShotBlue;
 
 
+    public ParticleSystem ChargeShot;
     public GameObject tankBody;
     public GameObject Tank;  
     public GameObject bulletPrefab;
@@ -23,17 +23,18 @@ public class BulletFire: MonoBehaviour {
 
 
     void Update() {
+
         if (Input.GetMouseButton(0) && ReloadTimer.fillAmount >= 1)
         {
-            bulletPower = ShotChargedAmount.fillAmount;
+            //As the button is held down, increase the fillAmount by 0.02 and keep bulletPower = FillAmount
             ShotChargedAmount.fillAmount += 0.02f;
-            ChargeShotBlue.Play();
+            bulletPower = ShotChargedAmount.fillAmount;
         }
         if (Input.GetMouseButtonUp(0))
         {
+            //On Mouse release reset the fillAmount and run FireBullet.
             ShotChargedAmount.fillAmount = 0f;
             FireBullet();
-            ChargeShotBlue.Stop();
         }
     }
 
