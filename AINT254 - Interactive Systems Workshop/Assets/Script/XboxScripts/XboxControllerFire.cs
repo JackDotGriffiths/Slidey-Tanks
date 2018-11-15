@@ -14,6 +14,7 @@ public class XboxControllerFire : MonoBehaviour
     public AudioClip Shoot;
     public ParticleSystem smoke;
     public float shootAxis;
+    public ParticleSystem ChargeShot;
 
     public static float bulletPower;
 

@@ -8,7 +8,6 @@ public class BulletFire: MonoBehaviour {
     public static float bulletPower;
 
 
-    public ParticleSystem ChargeShot;
     public GameObject tankBody;
     public GameObject Tank;  
     public GameObject bulletPrefab;
