@@ -11,8 +11,7 @@ public class TankExplode : MonoBehaviour {
     public GameObject explodeAnimation;
     public GameObject winText;
     public GameObject buttonRestart;
-    public GameObject TankAudioSource;
-    public AudioClip TankExplodeSound;
+    public AudioSource TankExplodeSound;
 
 
 
@@ -20,10 +19,15 @@ public class TankExplode : MonoBehaviour {
     {
         if(other.tag == enemyBullet.tag)
         {
-            Debug.Log("Play Sound");
-            TankAudioSource.GetComponent<AudioSource>().clip = TankExplodeSound;
-            TankAudioSource.GetComponent<AudioSource>().PlayDelayed(0);
+            TankExplodeSound.Play();
             ExplodeTank();
+            foreach (Transform child in PlayerTank.transform)
+            {
+                if (child.gameObject.name == "TankBody" || child.gameObject.name == "TankBarrel")
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
             Destroy(other);
         }
     }
@@ -43,7 +47,7 @@ public class TankExplode : MonoBehaviour {
 
 
         Destroy(Explode, 2f);
-        Destroy(PlayerTank);
+        Destroy(PlayerTank, .701f);
 
     }
 }
