@@ -21,6 +21,8 @@ public class AIBehaviour : MonoBehaviour {
     private float Timer = 0.0f;
     private float TimerPeriod = 1.0f;
     private Vector3 RandomPos;
+    private Vector3 AccuracyEdited;
+    private int RandomAccuracyAddition;
 
     public static bool BombPlaced = false;
     private int Chance = 0;
@@ -32,6 +34,7 @@ public class AIBehaviour : MonoBehaviour {
             Timer = Time.time + TimerPeriod;
             RandomPos = new Vector3(Random.Range(-100f, 100f), TankBarrel.transform.position.y, Random.Range(-100f, 100f));
             Chance = Random.Range(0, 4);
+            RandomAccuracyAddition = (Random.Range(-5, 5)/10);
         }
         Debug.DrawRay(this.transform.position, enemy.transform.position - this.transform.position);
         Vector3 enemyRotateTowards = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
@@ -41,7 +44,7 @@ public class AIBehaviour : MonoBehaviour {
         {
             if (hit.collider.tag == "Player1")
             {
-                TankBarrel.transform.LookAt(enemyRotateTowards);
+                TankBarrel.transform.LookAt(AccuracyEditor(enemyRotateTowards));
                 Fire();
             }
             else
@@ -60,7 +63,11 @@ public class AIBehaviour : MonoBehaviour {
 
     }
 
-
+    Vector3 AccuracyEditor(Vector3 givenVector)
+    {
+        AccuracyEdited = new Vector3(givenVector.x + RandomAccuracyAddition, givenVector.y, givenVector.z + RandomAccuracyAddition);
+        return AccuracyEdited;
+    }
 
 
     void Fire()

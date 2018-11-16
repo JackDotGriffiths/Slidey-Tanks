@@ -4052,6 +4052,11 @@ Prefab:
       propertyPath: buttonRestart
       value: 
       objectReference: {fileID: 423806473}
+    - target: {fileID: 114018676637207180, guid: 4937b3bd60844434eaab5ad90e9e1664,
+        type: 2}
+      propertyPath: Difficulty
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4937b3bd60844434eaab5ad90e9e1664, type: 2}
   m_IsPrefabParent: 0
