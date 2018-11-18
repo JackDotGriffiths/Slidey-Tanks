@@ -12,11 +12,13 @@ public class XboxTankRotate : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //f_vertical = Input.GetAxis("Player2Vertical2") * 360;
-        //f_horizontal = Input.GetAxis("Player2Horizontal2") * 360;
+        f_vertical = Input.GetAxis("Player2Vertical2") * 360;
+        f_horizontal = Input.GetAxis("Player2Horizontal2") * 360;
 
-        //lookdirection = new Vector3(f_horizontal, transform.position.y, f_vertical);
+        lookdirection = new Vector3(f_horizontal, transform.position.y, f_vertical);
 
-        //transform.LookAt(lookdirection);
+        Quaternion targetRotation = Quaternion.LookRotation(lookdirection - transform.position);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10 * Time.deltaTime);
     }
 }

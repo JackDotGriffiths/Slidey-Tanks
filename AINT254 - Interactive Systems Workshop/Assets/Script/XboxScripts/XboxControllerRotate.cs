@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class XboxControllerRotate : MonoBehaviour {
 
-    private Vector3 lookdirection;
+ 
     public float f_vertical;
     public float f_horizontal;
 
@@ -14,8 +14,10 @@ public class XboxControllerRotate : MonoBehaviour {
         f_vertical = Input.GetAxis("Player2Vertical") * 360;
         f_horizontal = Input.GetAxis("Player2Horizontal") * 360;
 
-        lookdirection = new Vector3(f_horizontal, transform.position.y, f_vertical);
+        Vector3 lookdirection = new Vector3(f_horizontal, transform.position.y, f_vertical);
 
-        transform.LookAt(lookdirection);
-	}
+        Quaternion targetRotation = Quaternion.LookRotation(lookdirection - transform.position);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 15 * Time.deltaTime);
+    }
 }

@@ -17,6 +17,10 @@ public class BarrelFollowMouse : MonoBehaviour {
         }
 
         //Force the barrel to rotate towards the mouse pointer, only changing the Y axis so that it stays on a singular plane.
-        transform.LookAt(new Vector3(RayHitPoint.x, transform.position.y, RayHitPoint.z));
+        Vector3 lookDirection = new Vector3(RayHitPoint.x, transform.position.y, RayHitPoint.z);
+
+        Quaternion targetRotation = Quaternion.LookRotation(lookDirection - transform.position);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 15 * Time.deltaTime);
     }
 }
