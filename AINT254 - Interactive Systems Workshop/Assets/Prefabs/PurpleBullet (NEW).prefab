@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114950522709923208}
   - component: {fileID: 54965616127865586}
   - component: {fileID: 136768433951463500}
+  - component: {fileID: 65656972883495218}
   m_Layer: 0
   m_Name: PurpleBullet (NEW)
   m_TagString: Player2Bullet
@@ -133,6 +134,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!65 &65656972883495218
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1478845516739178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44819847, y: 0.44819835, z: 0.8651252}
+  m_Center: {x: 0, y: 0, z: 0.10179906}
 --- !u!114 &114950522709923208
 MonoBehaviour:
   m_ObjectHideFlags: 1

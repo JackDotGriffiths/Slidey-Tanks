@@ -8,9 +8,10 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public GameObject tank;
     public GameObject tank2;
     private Quaternion ForwardDirection;
+    public GameObject dirtParticles1;
+    public GameObject dirtParticles2;
 
     private bool onHover = false;
-    private bool tankReturn = false;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (onHover == true)
         {
+            dirtParticles1.SetActive(false);
+            dirtParticles2.SetActive(false);
             tank.transform.Rotate(Vector3.up * Time.deltaTime * 80);
             tank2.transform.Rotate(Vector3.up * Time.deltaTime * 80);
         }
@@ -36,5 +39,7 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
         onHover = false;
         tank.transform.rotation = Quaternion.Lerp(transform.rotation, ForwardDirection, 3f);
         tank2.transform.rotation = Quaternion.Lerp(transform.rotation, ForwardDirection, 3f);
+        dirtParticles1.SetActive(true);
+        dirtParticles2.SetActive(true);
     }
 }

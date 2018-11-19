@@ -22,8 +22,19 @@ public class BulletBehaviour: MonoBehaviour {
         }
     }
 
-    private void Update()
+    void FixedUpdate()
     {
         transform.rotation = Quaternion.LookRotation(GetComponent<Rigidbody>().velocity);
+
+        if (GetComponent<Rigidbody>().velocity == Vector3.zero)
+        {
+            var destroyParticles = (GameObject)Instantiate(
+            destroyEffect,
+            transform.position,
+            transform.rotation);
+
+            Destroy(destroyParticles, 0.4f);
+            Destroy(gameObject);
+        }
     }
 }

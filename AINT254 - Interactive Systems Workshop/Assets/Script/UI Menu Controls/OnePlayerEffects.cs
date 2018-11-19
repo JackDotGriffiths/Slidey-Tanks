@@ -7,6 +7,7 @@ public class OnePlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public GameObject tank;
     public Quaternion ForwardDirection;
+    public GameObject dirtParticles;
 
     private bool onHover = false;
 
@@ -18,6 +19,7 @@ public class OnePlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
 	void Update () {
         if (onHover == true)
         {
+            dirtParticles.SetActive(false);
             tank.transform.Rotate(Vector3.up * Time.deltaTime * 80);
         }
     }
@@ -29,6 +31,7 @@ public class OnePlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerExit(PointerEventData eventData)
     {
         onHover = false;
+        dirtParticles.SetActive(true);
         tank.transform.rotation = Quaternion.Slerp(transform.rotation, ForwardDirection, 5f);
     }
 }

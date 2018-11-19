@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114437467538664582}
   - component: {fileID: 54640099268446804}
   - component: {fileID: 136196719631068024}
+  - component: {fileID: 65821923882120982}
   m_Layer: 0
   m_Name: BlueBullet (NEW)
   m_TagString: Player1Bullet
@@ -133,6 +134,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
+--- !u!65 &65821923882120982
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1120813931841244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44819847, y: 0.44819835, z: 0.8651252}
+  m_Center: {x: 0, y: 0, z: 0.10179906}
 --- !u!114 &114437467538664582
 MonoBehaviour:
   m_ObjectHideFlags: 1

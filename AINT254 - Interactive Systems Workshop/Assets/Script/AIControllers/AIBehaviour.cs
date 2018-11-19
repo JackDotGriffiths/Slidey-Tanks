@@ -16,8 +16,6 @@ public class AIBehaviour : MonoBehaviour {
     public GameObject TankBarrel;
     public GameObject AIBombPrefab;
         
-    private float bulletPower = 0.5f;
-    private bool Rotated = false;
     private float Timer = 0.0f;
     private float TimerPeriod = 1.0f;
     private Vector3 RandomPos;
@@ -33,7 +31,7 @@ public class AIBehaviour : MonoBehaviour {
         {
             Timer = Time.time + TimerPeriod;
             RandomPos = new Vector3(Random.Range(-100f, 100f), TankBarrel.transform.position.y, Random.Range(-100f, 100f));
-            Chance = Random.Range(0, 4);
+            Chance = Random.Range(2, 10);
             RandomAccuracyAddition = (Random.Range(-5, 5)/10);
         }
         Debug.DrawRay(this.transform.position, enemy.transform.position - this.transform.position);
@@ -44,13 +42,15 @@ public class AIBehaviour : MonoBehaviour {
         {
             if (hit.collider.tag == "Player1")
             {
-                TankBarrel.transform.LookAt(AccuracyEditor(enemyRotateTowards));
-                Fire();
+                Quaternion rotation = Quaternion.LookRotation(AccuracyEditor(enemyRotateTowards) - transform.position);
+                TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation ,rotation ,6 * Time.deltaTime);
+                Invoke("Fire", 1);
             }
             else
             {
-                TankBarrel.transform.LookAt(RandomPos);
-                Fire();
+                Quaternion rotation = Quaternion.LookRotation(RandomPos);
+                TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, rotation, 6 * Time.deltaTime);
+                Invoke("Fire", Chance);
             }
         }
 
@@ -62,7 +62,6 @@ public class AIBehaviour : MonoBehaviour {
         PlaceBomb();
 
     }
-
     Vector3 AccuracyEditor(Vector3 givenVector)
     {
         AccuracyEdited = new Vector3(givenVector.x + RandomAccuracyAddition, givenVector.y, givenVector.z + RandomAccuracyAddition);
@@ -70,7 +69,7 @@ public class AIBehaviour : MonoBehaviour {
     }
 
 
-    void Fire()
+    private void Fire()
     {
         if (ReloadTimer.fillAmount == 1)
         {
@@ -103,8 +102,7 @@ public class AIBehaviour : MonoBehaviour {
     void Recoil()
     {
         Vector3 direction = Tank.transform.position - bulletSpawn.transform.position;
-        float ForceValue = 1 + BulletFire.bulletPower;
-        Tank.GetComponent<Rigidbody>().AddForce(direction.normalized * 1200);
+        Tank.GetComponent<Rigidbody>().AddForce(direction.normalized * 1000);
     }
 
     void PlaceBomb()

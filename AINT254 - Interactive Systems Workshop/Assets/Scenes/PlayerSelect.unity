@@ -37719,6 +37719,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tank: {fileID: 2057703464}
   tank2: {fileID: 844687094}
+  dirtParticles1: {fileID: 67843045}
+  dirtParticles2: {fileID: 870509771}
 --- !u!1 &436727657
 GameObject:
   m_ObjectHideFlags: 0
@@ -166020,6 +166022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tank: {fileID: 1679474321}
   ForwardDirection: {x: 0, y: 0, z: 0, w: 0}
+  dirtParticles: {fileID: 1395338351}
 --- !u!1 &2057703464
 GameObject:
   m_ObjectHideFlags: 0
