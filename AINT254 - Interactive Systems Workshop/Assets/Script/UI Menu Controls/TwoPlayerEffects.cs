@@ -7,9 +7,15 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public GameObject tank;
     public GameObject tank2;
-    public Light spotlight;
+    private Quaternion ForwardDirection;
 
     private bool onHover = false;
+    private bool tankReturn = false;
+
+    void Start()
+    {
+        ForwardDirection = tank.transform.rotation;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,11 +24,6 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             tank.transform.Rotate(Vector3.up * Time.deltaTime * 80);
             tank2.transform.Rotate(Vector3.up * Time.deltaTime * 80);
-            spotlight.enabled = true;
-        }
-        else
-        {
-            spotlight.enabled = false;
         }
     }
 
@@ -33,5 +34,7 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerExit(PointerEventData eventData)
     {
         onHover = false;
+        tank.transform.rotation = Quaternion.Lerp(transform.rotation, ForwardDirection, 3f);
+        tank2.transform.rotation = Quaternion.Lerp(transform.rotation, ForwardDirection, 3f);
     }
 }

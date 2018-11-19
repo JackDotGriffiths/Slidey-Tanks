@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OnePlayerEffects : MonoBehaviour,IPointerEnterHandler ,IPointerExitHandler {
+public class OnePlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public GameObject tank;
-    public Light spotlight;
+    public Quaternion ForwardDirection;
 
     private bool onHover = false;
+
+    void Start() {
+        ForwardDirection = transform.rotation;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (onHover == true)
         {
             tank.transform.Rotate(Vector3.up * Time.deltaTime * 80);
-            spotlight.enabled = true;
-        }
-        else
-        {
-            spotlight.enabled = false;
         }
     }
 
@@ -30,5 +29,6 @@ public class OnePlayerEffects : MonoBehaviour,IPointerEnterHandler ,IPointerExit
     public void OnPointerExit(PointerEventData eventData)
     {
         onHover = false;
+        tank.transform.rotation = Quaternion.Slerp(transform.rotation, ForwardDirection, 5f);
     }
 }
