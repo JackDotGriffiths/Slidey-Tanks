@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 54195922726676368}
   - component: {fileID: 95685448244018876}
   - component: {fileID: 114646443260015716}
+  - component: {fileID: 135232203078964650}
   m_Layer: 0
   m_Name: AIBomb - Purple
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,3 +520,15 @@ MonoBehaviour:
   explosionParticles: {fileID: 1332973254872768, guid: 8b9c1c4e2efe26846899a337288ef263,
     type: 2}
   explosionSound: {fileID: 82109397851875610}
+--- !u!135 &135232203078964650
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480708148538544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

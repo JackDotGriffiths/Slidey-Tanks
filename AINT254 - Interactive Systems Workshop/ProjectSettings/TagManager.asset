@@ -9,6 +9,8 @@ TagManager:
   - Player2
   - Player1Bullet
   - Player2Bullet
+  - Particles
+  - Bomb
   layers:
   - Default
   - TransparentFX

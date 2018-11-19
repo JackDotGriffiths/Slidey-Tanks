@@ -17,6 +17,7 @@ public class BulletFire: MonoBehaviour {
     public Image ShotChargedAmount;
     public AudioClip Shoot;
     public ParticleSystem smoke;
+    public Animator BarrelBounce;
 
     public static bool FiredBullet;
 
@@ -47,7 +48,7 @@ public class BulletFire: MonoBehaviour {
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7 * (1 + bulletPower);
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 7 * (1 + bulletPower);
 
             //Run the Barrel Smoke Particle effect.
             smoke.Play();
@@ -58,6 +59,8 @@ public class BulletFire: MonoBehaviour {
             //Play the sound of bullet shooting.
             GetComponent<AudioSource>().clip = Shoot;
             GetComponent<AudioSource>().Play();
+            BarrelBounce.Play("Bullet Recoil");
+            BarrelBounce.Play("Idle");
 
             //Run the Recoil Method of TankRecoil script.
             Tank.GetComponent<TankRecoil>().Recoil();

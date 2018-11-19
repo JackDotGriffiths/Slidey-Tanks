@@ -50,7 +50,7 @@ public class XboxControllerFire : MonoBehaviour
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 7;
 
             //Play the BarrelSmoke effect.
             smoke.Play();

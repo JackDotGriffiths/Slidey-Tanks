@@ -43,6 +43,7 @@ public class BombExplode : MonoBehaviour {
 
                 if (rb != null)
                     rb.AddExplosionForce(1600, explosionPos, 5f, 3.0F);
+                  
             }
         }
     }

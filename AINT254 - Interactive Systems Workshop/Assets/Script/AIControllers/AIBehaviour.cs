@@ -79,7 +79,7 @@ public class AIBehaviour : MonoBehaviour {
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.up * 7;
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 7;
 
             //Run the Barrel Smoke Particle effect.
             smoke.Play();
