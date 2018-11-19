@@ -19,6 +19,6 @@ public class XboxTankRotate : MonoBehaviour {
 
         Quaternion targetRotation = Quaternion.LookRotation(lookdirection - transform.position);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10 * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 2 * Time.deltaTime);
     }
 }
