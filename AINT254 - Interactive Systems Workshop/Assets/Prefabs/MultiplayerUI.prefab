@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 224540880936939154}
   - component: {fileID: 222400923904986588}
   - component: {fileID: 114283807210879750}
+  - component: {fileID: 114344755502282160}
   - component: {fileID: 114087837744905430}
   m_Layer: 5
   m_Name: Restart
@@ -416,6 +417,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BLUE PLAYER WINS
+--- !u!114 &114344755502282160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760292264249944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e048b53f7b02ac04dafa19e01df49f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToLoad: 0
 --- !u!114 &114500716507301838
 MonoBehaviour:
   m_ObjectHideFlags: 1

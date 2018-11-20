@@ -67,6 +67,7 @@ public class TankHealthControl : MonoBehaviour {
                     }
                 }
                 ExplodeTank();
+                Time.timeScale = 0;
             }
         }
 

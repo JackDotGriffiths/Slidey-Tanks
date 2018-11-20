@@ -73,28 +73,31 @@ public class AIBehaviour : MonoBehaviour {
     {
         if (ReloadTimer.fillAmount == 1)
         {
-            //Instantiate bullet in position of bulletSpawn Game Object and give it a velocity.
-            var bullet = (GameObject)Instantiate(
-            bulletPrefab,
-            bulletSpawn.position,
-            bulletSpawn.rotation);
-            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 7;
+            if (Time.timeScale == 1)
+            {
+                //Instantiate bullet in position of bulletSpawn Game Object and give it a velocity.
+                var bullet = (GameObject)Instantiate(
+                bulletPrefab,
+                bulletSpawn.position,
+                bulletSpawn.rotation);
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 7;
 
-            //Run the Barrel Smoke Particle effect.
-            smoke.Play();
+                //Run the Barrel Smoke Particle effect.
+                smoke.Play();
 
-            //Reset the ReloadTimer Object to an empty fillAmount
-            ReloadTimer.fillAmount = 0;
+                //Reset the ReloadTimer Object to an empty fillAmount
+                ReloadTimer.fillAmount = 0;
 
-            //Play the sound of bullet shooting.
-            GetComponent<AudioSource>().clip = Shoot;
-            GetComponent<AudioSource>().Play();
+                //Play the sound of bullet shooting.
+                GetComponent<AudioSource>().clip = Shoot;
+                GetComponent<AudioSource>().Play();
 
-            //Run the Recoil Method of TankRecoil script.
-            Recoil();
+                //Run the Recoil Method of TankRecoil script.
+                Recoil();
 
-            //Destroy the bullet object after 5 seconds.
-            Destroy(bullet, 5.0f);
+                //Destroy the bullet object after 5 seconds.
+                Destroy(bullet, 5.0f);
+            }
 
         }
     }

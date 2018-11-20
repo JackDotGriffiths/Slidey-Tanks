@@ -15,6 +15,10 @@ public class PlayerSelectControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        Time.timeScale = 1;
+
+        
         //Retrieve width of Canvas
         float Width = m_UICanvas.GetComponent<RectTransform>().rect.width;
 
