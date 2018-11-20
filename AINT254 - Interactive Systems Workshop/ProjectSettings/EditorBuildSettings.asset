@@ -11,7 +11,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerSelect.unity
     guid: f39d2f94f24c6144ea112c4f6565b3cc
+  - enabled: 0
+    path: Assets/Scenes/Multiplayer/MapSelection.unity
+    guid: c0685a27f9016d540a6fee38d537fec8
   - enabled: 1
-    path: Assets/Scenes/Prototyping.unity
-    guid: 089eba27673335445901bf58975ddf01
+    path: Assets/Scenes/Multiplayer/MP - MapSelection.unity
+    guid: a46d2b08e164cf34a95f1a2f9bb27879
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/Level 1 - MP.unity
+    guid: 47f2412b500fba9478832a966267c8c8
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/Level 2 - MP.unity
+    guid: 4a34a6de6c3cf374090ffbe4b65b7422
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/Level 3 - MP.unity
+    guid: 904456f4825e1314bb66055a211adcd2
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/Level 4 - MP.unity
+    guid: 64fd84745fdbaca4589ec114f6691b62
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer/Level 5 - MP.unity
+    guid: f0724a1abbd8faf4296e7dba357039c3
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/Level 1 - SP.unity
+    guid: 299d1da7d9c97c5479636fb3132a18ca
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/Level 2 - SP.unity
+    guid: b32c182422adabb47958a4b8d6e047b1
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/Level 3 - SP.unity
+    guid: 4f4e516f8b80c9a4fa7f93238e31543e
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/Level 4 - SP.unity
+    guid: d43ea34498c82ed43904469e67d9758b
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer/SP - MapSelection.unity
+    guid: 6b715ecf1ce615d4783ec1b6241fa01c
   m_configObjects: {}

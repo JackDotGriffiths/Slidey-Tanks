@@ -36,13 +36,13 @@ public class PlayerSelectControl : MonoBehaviour {
 	void OnePlayerStart()
     {
         Debug.Log("Start One Player");
+        SceneManager.LoadScene(11);
     }
 
     void TwoPlayerStart()
     {
         Debug.Log("Start Two Player");
         SceneManager.LoadScene(1);
-        SceneManager.UnloadSceneAsync(0);
     }
 
     void ExitGame()
