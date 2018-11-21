@@ -535,7 +535,7 @@ Prefab:
     - target: {fileID: 224418626153070306, guid: 75c6bf690f9af5041b281f313e35eb1f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224418626153070306, guid: 75c6bf690f9af5041b281f313e35eb1f,
         type: 2}
@@ -596,6 +596,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 849826867}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &849826869 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114087837744905430, guid: 75c6bf690f9af5041b281f313e35eb1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 849826867}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &875424958
 Prefab:
   m_ObjectHideFlags: 0
@@ -909,6 +915,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114821122324784370, guid: 274e00a2864c40344a67296f3ce1b8d2,
+        type: 2}
+      propertyPath: buttonRestart
+      value: 
+      objectReference: {fileID: 849826869}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274e00a2864c40344a67296f3ce1b8d2, type: 2}
   m_IsPrefabParent: 0
@@ -1051,7 +1062,7 @@ Transform:
   - {fileID: 1080391092}
   - {fileID: 1188172138}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1971838270
 Prefab:
