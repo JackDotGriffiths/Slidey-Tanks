@@ -1518,15 +1518,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4ccefc323da6847ace55815b500a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseText: {fileID: 0}
+  buttonRestart: {fileID: 0}
   enemyBullet: {fileID: 1120813931841244, guid: 3068b9853ae6d584d971d19ed2c2861b,
     type: 2}
   playerBullet: {fileID: 1832391388407614, guid: 9fc33640c56fed2479e972f796854e29,
     type: 2}
+  TankDestroyedPrefab: {fileID: 1350781039504414, guid: 3d1c6c4245e0ea44e8da170f5ccdebef,
+    type: 2}
   PlayerTank: {fileID: 1605558954792332}
   explodeAnimation: {fileID: 1332973254872768, guid: 8b9c1c4e2efe26846899a337288ef263,
     type: 2}
-  loseText: {fileID: 0}
-  buttonRestart: {fileID: 0}
   TankExplodeSound: {fileID: 82818231120383318}
   HealthBar2: {fileID: 1010834647294012}
   HealthBar3: {fileID: 1057736380097942}

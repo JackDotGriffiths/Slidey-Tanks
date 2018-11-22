@@ -47,7 +47,7 @@ public class AIBehaviour : MonoBehaviour {
             {
                 //Make the tank start braking if it can see the player.
                 Rigidbody rigidbody = GetComponent<Rigidbody>();
-                rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.95f, rigidbody.velocity.y * 0.95f, rigidbody.velocity.z * 0.95f);
+                rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.8f, rigidbody.velocity.y * 0.8f, rigidbody.velocity.z * 0.8f);
                 Debug.DrawLine(TankBarrel.transform.position, enemyRotateTowards, Color.green);
 
                 TankBarrel.transform.LookAt(hit.point);

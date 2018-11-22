@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TankHealthControl : MonoBehaviour {
+    public GameObject loseText;
+
+    public GameObject buttonRestart;
+
 
     public GameObject enemyBullet;
     public GameObject playerBullet;
+    public GameObject TankDestroyedPrefab;
     public GameObject PlayerTank;
     public GameObject explodeAnimation;
-    public GameObject loseText;
-    public GameObject buttonRestart;
     public AudioSource TankExplodeSound;
     public GameObject HealthBar2;
     public GameObject HealthBar3;
@@ -74,6 +77,25 @@ public class TankHealthControl : MonoBehaviour {
             }
             else if (TankHealth == 0)
             {
+                foreach (Transform child in PlayerTank.transform)
+                {
+                    if (child.gameObject.name == "Tank" || child.gameObject.name == "Barrel")
+                    {
+                        child.gameObject.SetActive(false);
+                    }
+                }
+                var Explode = (GameObject)Instantiate(
+                    explodeAnimation,
+                    PlayerTank.transform.position,
+                    PlayerTank.transform.rotation);
+                Explode.GetComponentInChildren<ParticleSystem>().Play();
+
+                var destroyedTank = (GameObject)Instantiate(
+                    TankDestroyedPrefab,
+                    gameObject.transform.position,
+                    gameObject.transform.rotation);
+                ExplosionForce();
+
                 TankExplodeSound.Play();
                 foreach (Transform child in PlayerTank.transform)
                 {
@@ -82,6 +104,7 @@ public class TankHealthControl : MonoBehaviour {
                         child.gameObject.SetActive(false);
                     }
                 }
+
                 ExplodeTank();
             }
         }
@@ -92,23 +115,37 @@ public class TankHealthControl : MonoBehaviour {
     void ExplodeTank()
     {
         Destroy(PlayerTank, .701f);
-        var Explode = (GameObject)Instantiate(
-            explodeAnimation,
-            PlayerTank.transform.position,
-            PlayerTank.transform.rotation);
-
-        Explode.GetComponentInChildren<ParticleSystem>().Play();
         loseText.GetComponent<Text>().enabled = true;
         buttonRestart.GetComponent<Button>().enabled = true;
         buttonRestart.GetComponent<Image>().enabled = true;
         buttonRestart.GetComponentInChildren<Text>().enabled = true;
 
         Pause();
-        Destroy(Explode, 2f);
     }
 
     void Pause()
     {
         PauseMenuControl.LockControls = true;
+    }
+
+    void ExplosionForce()
+    {
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, 25f);
+        foreach (Collider hit in colliders)
+        {
+            if (hit.tag == "Player1Bullet" || hit.tag == "Player2Bullet")
+            {
+                Debug.Log("Skip");
+            }
+            else
+            {
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                    rb.AddExplosionForce(100, explosionPos, 5f, 2.0F);
+
+            }
+        }
     }
 }
