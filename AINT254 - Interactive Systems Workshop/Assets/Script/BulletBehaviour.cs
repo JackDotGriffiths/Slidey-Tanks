@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletBehaviour: MonoBehaviour {
 
     public GameObject destroyEffect;
-
+    public GameObject playerTank;
 
     private void OnTriggerEnter(Collider other)
     {

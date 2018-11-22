@@ -10,6 +10,7 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private Quaternion ForwardDirection;
     public GameObject dirtParticles1;
     public GameObject dirtParticles2;
+    public Animator TextFlash;
 
     private bool onHover = false;
 
@@ -23,6 +24,7 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         if (onHover == true)
         {
+            TextFlash.Play("MPTextFlash");
             dirtParticles1.SetActive(false);
             dirtParticles2.SetActive(false);
             tank.transform.Rotate(Vector3.up * Time.deltaTime * 80);
@@ -36,6 +38,7 @@ public class TwoPlayerEffects : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnPointerExit(PointerEventData eventData)
     {
+        TextFlash.Play("Idle");
         onHover = false;
         tank.transform.rotation = Quaternion.Lerp(transform.rotation, ForwardDirection, 3f);
         tank2.transform.rotation = Quaternion.Lerp(transform.rotation, ForwardDirection, 3f);

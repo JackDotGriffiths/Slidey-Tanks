@@ -22,7 +22,7 @@ public class XboxControllerFire : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale == 1)
+        if (PauseMenuControl.LockControls != true)
         {
             shootAxis = Input.GetAxis("Player2Fire");
             if (shootAxis > 0 && ReloadTimer.fillAmount >= 1)

@@ -23,7 +23,7 @@ public class BulletFire: MonoBehaviour {
 
 
     void Update() {
-        if (Time.timeScale == 1)
+        if (PauseMenuControl.LockControls != true)
         {
             if (Input.GetMouseButton(0) && ReloadTimer.fillAmount >= 1)
             {

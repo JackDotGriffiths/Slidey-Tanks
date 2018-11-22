@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TankHealthControl : MonoBehaviour {
 
     public GameObject enemyBullet;
+    public GameObject playerBullet;
     public GameObject PlayerTank;
     public GameObject explodeAnimation;
     public GameObject loseText;
@@ -18,7 +19,8 @@ public class TankHealthControl : MonoBehaviour {
     public Material TankMetalMaterial;
 
     private float TankHealth;
-    private bool HealthLost;
+    private bool HealthLost = false;
+    private bool dealdamage = false;
 
     void Start()
     {
@@ -28,23 +30,37 @@ public class TankHealthControl : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == enemyBullet.tag)
+        if (other.tag == playerBullet.tag)
         {
             Destroy(other.gameObject);
-
-            if(HealthLost == false)
-            {
-                Debug.Log("Taking Health");
-                TankHealth = TankHealth - 1f;
-                HealthLost = true;
-            }
-
             var destroyParticles = (GameObject)Instantiate(
             bulletDestroy,
             other.gameObject.transform.position,
             other.gameObject.transform.rotation);
 
             Destroy(destroyParticles, 0.4f);
+        }
+
+        if (other.tag == enemyBullet.tag)
+        {
+            Destroy(other.gameObject);
+            dealdamage = true;
+         }
+     }
+
+    void Update()
+    {
+       if (dealdamage == true)
+        {
+            
+            var destroyParticles = (GameObject)Instantiate(
+            bulletDestroy,
+            gameObject.transform.position,
+            gameObject.transform.rotation);
+
+            Destroy(destroyParticles, 0.4f);
+            Debug.Log("Taking Health");
+            TankHealth = TankHealth - 1f;
             if (TankHealth == 2)
             {
                 HealthBar3.GetComponent<MeshRenderer>().material = TankMetalMaterial;
@@ -67,14 +83,15 @@ public class TankHealthControl : MonoBehaviour {
                     }
                 }
                 ExplodeTank();
-                Time.timeScale = 0;
             }
         }
 
+        dealdamage = false;
     }
 
     void ExplodeTank()
     {
+        Destroy(PlayerTank, .701f);
         var Explode = (GameObject)Instantiate(
             explodeAnimation,
             PlayerTank.transform.position,
@@ -86,9 +103,12 @@ public class TankHealthControl : MonoBehaviour {
         buttonRestart.GetComponent<Image>().enabled = true;
         buttonRestart.GetComponentInChildren<Text>().enabled = true;
 
-
+        Pause();
         Destroy(Explode, 2f);
-        Destroy(PlayerTank, .701f);
+    }
 
+    void Pause()
+    {
+        PauseMenuControl.LockControls = true;
     }
 }

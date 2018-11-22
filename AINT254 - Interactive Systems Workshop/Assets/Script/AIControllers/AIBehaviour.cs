@@ -20,38 +20,46 @@ public class AIBehaviour : MonoBehaviour {
     private float TimerPeriod = 1.0f;
     private Vector3 RandomPos;
     private Vector3 AccuracyEdited;
-    private int RandomAccuracyAddition;
 
     public static bool BombPlaced = false;
     private int Chance = 0;
 
-    void Update()
+    private void Update()
     {
         if (Time.time > Timer)
         {
             Timer = Time.time + TimerPeriod;
             RandomPos = new Vector3(Random.Range(-100f, 100f), TankBarrel.transform.position.y, Random.Range(-100f, 100f));
-            Chance = Random.Range(2, 10);
-            RandomAccuracyAddition = (Random.Range(-5, 5)/10);
+            Chance = Random.Range(1, 5);
         }
-        Debug.DrawRay(this.transform.position, enemy.transform.position - this.transform.position);
+    }
+
+    void FixedUpdate()
+    {
+        Debug.DrawLine(TankBarrel.transform.position, enemy.transform.position, Color.red);
         Vector3 enemyRotateTowards = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
 
         RaycastHit hit;
-        if (Physics.Linecast(transform.position, enemy.transform.position,out hit))
+        if (Physics.Linecast(TankBarrel.transform.position,enemy.transform.position, out hit))
         {
+            Debug.DrawLine(TankBarrel.transform.position, hit.point, Color.cyan);
             if (hit.collider.tag == "Player1")
             {
-                Quaternion rotation = Quaternion.LookRotation(AccuracyEditor(enemyRotateTowards) - transform.position);
-                TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation ,rotation ,6 * Time.deltaTime);
-                Invoke("Fire", 1);
+                //Make the tank start braking if it can see the player.
+                Rigidbody rigidbody = GetComponent<Rigidbody>();
+                rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.95f, rigidbody.velocity.y * 0.95f, rigidbody.velocity.z * 0.95f);
+                Debug.DrawLine(TankBarrel.transform.position, enemyRotateTowards, Color.green);
+
+                TankBarrel.transform.LookAt(hit.point);
+                Invoke("Fire", 0.8f);
             }
-            else
+            else if (hit.collider.tag == "Walls" || hit.collider.tag == "Untagged")
             {
                 Quaternion rotation = Quaternion.LookRotation(RandomPos);
                 TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, rotation, 6 * Time.deltaTime);
                 Invoke("Fire", Chance);
             }
+
         }
 
         if (ReloadTimer.fillAmount < 1)
@@ -62,12 +70,6 @@ public class AIBehaviour : MonoBehaviour {
         PlaceBomb();
 
     }
-    Vector3 AccuracyEditor(Vector3 givenVector)
-    {
-        AccuracyEdited = new Vector3(givenVector.x + RandomAccuracyAddition, givenVector.y, givenVector.z + RandomAccuracyAddition);
-        return AccuracyEdited;
-    }
-
 
     private void Fire()
     {

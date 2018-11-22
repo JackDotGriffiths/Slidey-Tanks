@@ -9,13 +9,16 @@ public class BombPlace : MonoBehaviour {
     public GameObject BombPrefab;
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && P1BombActive == false)
+        if (PauseMenuControl.LockControls != true)
         {
-            var Bomb = (GameObject)Instantiate(
-            BombPrefab,
-            this.transform.position,
-            this.transform.rotation);
-            P1BombActive = true;
+            if (Input.GetKeyDown(KeyCode.Space) && P1BombActive == false)
+            {
+                var Bomb = (GameObject)Instantiate(
+                BombPrefab,
+                this.transform.position,
+                this.transform.rotation);
+                P1BombActive = true;
+            }
         }
 	}
 }

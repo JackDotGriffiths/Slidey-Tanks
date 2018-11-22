@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 136003715131973444}
   - component: {fileID: 65422049629839358}
   m_Layer: 0
-  m_Name: RedBullet (NEW)
+  m_Name: GreenBullet (NEW)
   m_TagString: Player2Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 1292432395956278, guid: c009b456fa94c4a49b391d5d6b562ab9,
     type: 2}
+  playerTank: {fileID: 1605558954792332, guid: 45dfd6b5198a1f041a60135b6dc9a15f, type: 2}
 --- !u!136 &136003715131973444
 CapsuleCollider:
   m_ObjectHideFlags: 1

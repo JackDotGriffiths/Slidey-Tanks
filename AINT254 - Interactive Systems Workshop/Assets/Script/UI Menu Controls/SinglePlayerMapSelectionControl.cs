@@ -13,6 +13,7 @@ public class SinglePlayerMapSelectionControl : MonoBehaviour {
 
     public Button btn_next;
     public Button btn_previous;
+    public Button btn_BackToMenu;
 
     private int MapIndex;
 
@@ -20,19 +21,47 @@ public class SinglePlayerMapSelectionControl : MonoBehaviour {
     void Start () {
         MapIndex = 1;
         btn_next.onClick.AddListener(DisplayNext);
-        btn_previous.onClick.AddListener(BackToMain);
+        btn_previous.onClick.AddListener(DisplayPrevious);
+        btn_BackToMenu.onClick.AddListener(BackToMain);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            DisplayNext();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            DisplayPrevious();
+        }
     }
 
     void DisplayNext()
     {
-        if (MapIndex < 4)
+        if (MapIndex == 4)
+        {
+            MapIndex = 1;
+            ShowCanvas();
+        }
+        else
         {
             MapIndex += 1;
             ShowCanvas();
         }
-        else if (MapIndex == 4)
+    }
+
+    void DisplayPrevious()
+    {
+        if(MapIndex == 1)
         {
-            MapIndex = 1;
+            MapIndex = 4;
+            ShowCanvas();
+                
+        }
+        else
+        {
+            MapIndex -= 1;
             ShowCanvas();
         }
     }

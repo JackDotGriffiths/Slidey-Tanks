@@ -9,33 +9,51 @@ ModelImporter:
     100006: InnerWalls
     100008: //RootNode
     100010: OuterBoundaries
+    100012: Object001
+    100014: Object002
+    100016: Object003
     400000: Cylinder002
     400002: Floor
     400004: Ice
     400006: InnerWalls
     400008: //RootNode
     400010: OuterBoundaries
+    400012: Object001
+    400014: Object002
+    400016: Object003
     2100000: No Name
     2300000: Cylinder002
     2300002: Floor
     2300004: Ice
     2300006: InnerWalls
     2300008: OuterBoundaries
+    2300010: Object001
+    2300012: Object002
+    2300014: Object003
     3300000: Cylinder002
     3300002: Floor
     3300004: Ice
     3300006: InnerWalls
     3300008: OuterBoundaries
+    3300010: Object001
+    3300012: Object002
+    3300014: Object003
     4300000: InnerWalls
     4300002: Cylinder002
     4300004: OuterBoundaries
     4300006: Floor
     4300008: Ice
+    4300010: Object001
+    4300012: Object002
+    4300014: Object003
     6400000: Cylinder002
     6400002: Floor
     6400004: Ice
     6400006: InnerWalls
     6400008: OuterBoundaries
+    6400010: Object001
+    6400012: Object002
+    6400014: Object003
   externalObjects: {}
   materials:
     importMaterials: 1

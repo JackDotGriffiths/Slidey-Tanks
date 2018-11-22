@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 1292432395956278, guid: c009b456fa94c4a49b391d5d6b562ab9,
     type: 2}
+  playerTank: {fileID: 1077617231998708, guid: 7ea1cbcabc611b64a84a2d574ab88463, type: 2}
 --- !u!136 &136196719631068024
 CapsuleCollider:
   m_ObjectHideFlags: 1
