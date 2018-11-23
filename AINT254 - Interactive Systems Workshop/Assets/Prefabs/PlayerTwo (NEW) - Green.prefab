@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 114561326699764404}
   - component: {fileID: 65109030791275024}
   - component: {fileID: 114514862421631490}
+  - component: {fileID: 114282794740309666}
   - component: {fileID: 114452680938573382}
   - component: {fileID: 114037442762106124}
   - component: {fileID: 114053207494547568}
@@ -1570,6 +1571,18 @@ MonoBehaviour:
   smoke: {fileID: 198763392381320304}
   shootAxis: 0
   ChargeShot: {fileID: 198504791995194688}
+--- !u!114 &114282794740309666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1605558954792332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed06986904a290747a432c40f6df131e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BrakeValue: 0.9
 --- !u!114 &114335516684285166
 MonoBehaviour:
   m_ObjectHideFlags: 1

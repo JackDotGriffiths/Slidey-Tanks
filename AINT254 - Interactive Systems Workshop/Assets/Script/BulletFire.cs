@@ -52,7 +52,7 @@ public class BulletFire: MonoBehaviour {
                 bulletPrefab,
                 bulletSpawn.position,
                 bulletSpawn.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 7 * (1 + bulletPower);
+                bullet.GetComponent<Rigidbody>().velocity = bullet.transform.right * 9 * (1 + bulletPower);
 
                 //Run the Barrel Smoke Particle effect.
                 smoke.Play();
