@@ -30,7 +30,7 @@ public class AIBehaviour : MonoBehaviour {
         {
             Timer = Time.time + TimerPeriod;
             RandomPos = new Vector3(Random.Range(-100f, 100f), TankBarrel.transform.position.y, Random.Range(-100f, 100f));
-            Chance = Random.Range(1, 5);
+            Chance = Random.Range(3, 20);
         }
     }
 
