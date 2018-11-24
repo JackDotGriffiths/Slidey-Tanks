@@ -7,6 +7,19 @@ public class BulletBehaviour: MonoBehaviour {
     public GameObject destroyEffect;
     public GameObject playerTank;
 
+    private BoxCollider bullet;
+
+    private void Start()
+    {
+        bullet = GetComponent<BoxCollider>();
+        bullet.enabled = false;
+        Invoke("enableCollision", 0.2f);
+    }
+
+    void enableCollision()
+    {
+        bullet.enabled = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         //Destroy bullet when it collides with walls.

@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23808812157405576}
   - component: {fileID: 114950522709923208}
   - component: {fileID: 54965616127865586}
-  - component: {fileID: 136768433951463500}
   - component: {fileID: 65656972883495218}
+  - component: {fileID: 136812424129462008}
   m_Layer: 0
   m_Name: PurpleBullet (NEW)
   m_TagString: Player2Bullet
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478845516739178}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.5526147, y: 0.000000759728, z: -5.587565}
+  m_LocalPosition: {x: 48.06177, y: -4.4379497, z: -17.355988}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4291003586784040}
@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.44819847, y: 0.44819835, z: 0.8651252}
-  m_Center: {x: 0, y: 0, z: 0.10179906}
+  m_Size: {x: 0.47682935, y: 0.44819835, z: 0.8651251}
+  m_Center: {x: -0.007847182, y: 0, z: 0.10179907}
 --- !u!114 &114950522709923208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
   destroyEffect: {fileID: 1292432395956278, guid: c009b456fa94c4a49b391d5d6b562ab9,
     type: 2}
   playerTank: {fileID: 1218654126864890, guid: 46c8f477fb7bc404d89730b050129efa, type: 2}
---- !u!136 &136768433951463500
+--- !u!136 &136812424129462008
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

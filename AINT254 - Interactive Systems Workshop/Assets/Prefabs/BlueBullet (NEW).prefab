@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23504003429153256}
   - component: {fileID: 114437467538664582}
   - component: {fileID: 54640099268446804}
-  - component: {fileID: 136196719631068024}
   - component: {fileID: 65821923882120982}
+  - component: {fileID: 136948869100622214}
   m_Layer: 0
   m_Name: BlueBullet (NEW)
   m_TagString: Player1Bullet
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120813931841244}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.826, y: 1.236, z: -3.944}
+  m_LocalPosition: {x: 47.679432, y: -4.4379497, z: -17.967777}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4546858941992030}
@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.44819847, y: 0.44819835, z: 0.8651252}
-  m_Center: {x: 0, y: 0, z: 0.10179906}
+  m_Size: {x: 0.51353437, y: 0.44819835, z: 0.8651251}
+  m_Center: {x: 0.0039477944, y: 0, z: 0.10179907}
 --- !u!114 &114437467538664582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
   destroyEffect: {fileID: 1292432395956278, guid: c009b456fa94c4a49b391d5d6b562ab9,
     type: 2}
   playerTank: {fileID: 1077617231998708, guid: 7ea1cbcabc611b64a84a2d574ab88463, type: 2}
---- !u!136 &136196719631068024
+--- !u!136 &136948869100622214
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

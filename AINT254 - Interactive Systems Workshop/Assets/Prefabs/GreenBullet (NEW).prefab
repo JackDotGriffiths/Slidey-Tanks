@@ -40,8 +40,8 @@ GameObject:
   - component: {fileID: 23585255987327376}
   - component: {fileID: 114378398418743386}
   - component: {fileID: 54745120444378626}
-  - component: {fileID: 136003715131973444}
   - component: {fileID: 65422049629839358}
+  - component: {fileID: 136762958842061662}
   m_Layer: 0
   m_Name: GreenBullet (NEW)
   m_TagString: Player2Bullet
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832391388407614}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.9093714, y: 0.0000007248217, z: -5.2947493}
+  m_LocalPosition: {x: 48.71556, y: -4.4379497, z: -17.65615}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4493756629216822}
@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.44819847, y: 0.44819835, z: 0.8651252}
-  m_Center: {x: 0, y: 0, z: 0.10179906}
+  m_Size: {x: 0.5284574, y: 0.44819835, z: 0.8651251}
+  m_Center: {x: 0.004066065, y: 0, z: 0.10179907}
 --- !u!114 &114378398418743386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
   destroyEffect: {fileID: 1292432395956278, guid: c009b456fa94c4a49b391d5d6b562ab9,
     type: 2}
   playerTank: {fileID: 1605558954792332, guid: 45dfd6b5198a1f041a60135b6dc9a15f, type: 2}
---- !u!136 &136003715131973444
+--- !u!136 &136762958842061662
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -11,7 +11,7 @@ public class BombPlace : MonoBehaviour {
 	void Update () {
         if (PauseMenuControl.LockControls != true)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && P1BombActive == false)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && P1BombActive == false)
             {
                 var Bomb = (GameObject)Instantiate(
                 BombPrefab,
