@@ -160,12 +160,12 @@ Prefab:
     - target: {fileID: 108953737215669980, guid: 6fc9eed18f54e184f8ac8f85d89b6d01,
         type: 2}
       propertyPath: m_SpotAngle
-      value: 105
+      value: 120.4
       objectReference: {fileID: 0}
     - target: {fileID: 108953737215669980, guid: 6fc9eed18f54e184f8ac8f85d89b6d01,
         type: 2}
       propertyPath: m_Intensity
-      value: 7.7
+      value: 5.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fc9eed18f54e184f8ac8f85d89b6d01, type: 2}
@@ -803,6 +803,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf5e0817bf5a4714787e0d32a062a28c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1312985268 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1195606796496468, guid: cf5e0817bf5a4714787e0d32a062a28c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1312985267}
+--- !u!114 &1312985269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1312985268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: fac98c634ce286d488f6c82b5c3d5489, type: 2}
 --- !u!1001 &1325790260
 Prefab:
   m_ObjectHideFlags: 0

@@ -8,17 +8,23 @@ public class BulletBehaviour: MonoBehaviour {
     public GameObject playerTank;
 
     private BoxCollider bullet;
+    private CapsuleCollider cylinder;
 
-    private void Start()
+    void Awake()
     {
+        Debug.Log("Disable Collision");
         bullet = GetComponent<BoxCollider>();
+        cylinder = GetComponent<CapsuleCollider>();
         bullet.enabled = false;
-        Invoke("enableCollision", 0.2f);
+        cylinder.enabled = false;
+        Invoke("enableCollision", 0.07f);
     }
 
     void enableCollision()
     {
+        Debug.Log("Enable Collision");
         bullet.enabled = true;
+        cylinder.enabled = true;
     }
     private void OnTriggerEnter(Collider other)
     {

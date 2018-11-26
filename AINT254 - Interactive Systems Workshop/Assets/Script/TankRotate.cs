@@ -10,16 +10,12 @@ public class TankRotate : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Rotate(Vector3.up * 100 * Time.deltaTime);
+                transform.Rotate(-Vector3.up * 100 * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Rotate(-Vector3.up * 100 * Time.deltaTime);
-            }
-            //else
-            {
-                
+                transform.Rotate(Vector3.up * 100 * Time.deltaTime);
             }
         }
 	}
