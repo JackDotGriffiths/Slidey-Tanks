@@ -12,7 +12,6 @@ public class BulletBehaviour: MonoBehaviour {
 
     void Awake()
     {
-        Debug.Log("Disable Collision");
         bullet = GetComponent<BoxCollider>();
         cylinder = GetComponent<CapsuleCollider>();
         bullet.enabled = false;
@@ -22,12 +21,12 @@ public class BulletBehaviour: MonoBehaviour {
 
     void enableCollision()
     {
-        Debug.Log("Enable Collision");
         bullet.enabled = true;
         cylinder.enabled = true;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
+        Debug.Log(other.tag);
         //Destroy bullet when it collides with walls.
         if(other.tag == "Walls" || other.tag == "Player1Bullet" || other.tag == "Player2Bullet")
         {

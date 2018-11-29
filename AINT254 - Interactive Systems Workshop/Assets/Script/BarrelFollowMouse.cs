@@ -24,7 +24,7 @@ public class BarrelFollowMouse : MonoBehaviour {
 
             Quaternion targetRotation = Quaternion.LookRotation(lookDirection - transform.position);
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 30 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 40 * Time.deltaTime);
         }
     }
 }
