@@ -53,7 +53,7 @@ public class TankHealthControl : MonoBehaviour {
 
     void Update()
     {
-       if (dealdamage == true)
+       if (dealdamage == true && PauseMenuControl.LockControls == false)
         {
             
             var destroyParticles = (GameObject)Instantiate(

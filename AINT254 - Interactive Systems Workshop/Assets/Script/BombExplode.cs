@@ -42,7 +42,7 @@ public class BombExplode : MonoBehaviour {
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
 
                 if (rb != null)
-                    rb.AddExplosionForce(1600, explosionPos, 5f, 3.0F);
+                    rb.AddExplosionForce(2000, explosionPos, 10f, 3.0F);
                   
             }
         }
