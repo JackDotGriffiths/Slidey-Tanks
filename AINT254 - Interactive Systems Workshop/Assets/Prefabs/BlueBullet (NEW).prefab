@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120813931841244}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 47.679432, y: -4.4379497, z: -17.967777}
+  m_LocalPosition: {x: -0.1938321, y: 0.1120489, z: 6.549926}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4546858941992030}
@@ -141,10 +141,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1120813931841244}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.51353437, y: 0.44819835, z: 0.8651251}
+  m_Size: {x: 0.45, y: 0.4, z: 0.8}
   m_Center: {x: 0.0039477944, y: 0, z: 0.10179907}
 --- !u!114 &114437467538664582
 MonoBehaviour:
@@ -169,10 +169,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.45
-  m_Height: 0.44819835
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.10179906}
+  m_Radius: 0.55
+  m_Height: 0.9
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.07}
 --- !u!198 &198648839861001860
 ParticleSystem:
   m_ObjectHideFlags: 1
