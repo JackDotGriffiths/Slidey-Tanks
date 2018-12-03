@@ -13,6 +13,8 @@ TagManager:
   - Bomb
   - P1Barrel
   - P2Barrel
+  - Floor
+  - DeathWall
   layers:
   - Default
   - TransparentFX
