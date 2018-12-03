@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -406,71 +406,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1938946487}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &386065459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 386065461}
-  - component: {fileID: 386065460}
-  m_Layer: 0
-  m_Name: TopLight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &386065460
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 386065459}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2.5
-  m_Range: 41.6
-  m_SpotAngle: 153.2
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 0.654
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &386065461
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 386065459}
-  m_LocalRotation: {x: 0.14212091, y: 0, z: -0, w: 0.9898493}
-  m_LocalPosition: {x: -4.4803495, y: 4.01, z: 7.35}
-  m_LocalScale: {x: 0.4366812, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1840071463}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &477249054
 GameObject:
   m_ObjectHideFlags: 0
@@ -9733,7 +9668,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 4, z: 1.95}
+  m_Size: {x: 2, y: 4, z: 1.95}
   m_Center: {x: -0.0000028414875, y: 0.000000059604645, z: 0.6554962}
 --- !u!1 &639489590
 GameObject:
@@ -9762,7 +9697,7 @@ Transform:
   m_LocalScale: {x: 0.4366812, y: 1.0000005, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 1840071463}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &639489592
 Light:
@@ -15978,6 +15913,71 @@ Transform:
   m_PrefabParentObject: {fileID: 4552972133626140, guid: 0157f45403cefce4e85f1a103e29c5a0,
     type: 2}
   m_PrefabInternal: {fileID: 854049052}
+--- !u!1 &1555079701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1555079703}
+  - component: {fileID: 1555079702}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1555079702
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555079701}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.52
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1555079703
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555079701}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: -11.837367, y: 0.76339376, z: -6.8634586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1609054117
 GameObject:
   m_ObjectHideFlags: 0
@@ -16152,9 +16152,9 @@ LineRenderer:
   m_GameObject: {fileID: 1656946146}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
@@ -16586,10 +16586,9 @@ Transform:
   - {fileID: 2058746884}
   - {fileID: 820356745}
   - {fileID: 992143044}
-  - {fileID: 386065461}
   - {fileID: 639489591}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 73.659004, y: 0, z: 0}
 --- !u!114 &1840071464
 MonoBehaviour:
@@ -16774,9 +16773,15 @@ Prefab:
     - target: {fileID: 114939672077386176, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: Restart
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114193589826321650, guid: 617c1292b75b8db408ddb0f43167419b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114151293933297902, guid: 617c1292b75b8db408ddb0f43167419b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 617c1292b75b8db408ddb0f43167419b, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2058746884 stripped
@@ -16929,7 +16934,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 4, z: 1.32}
+  m_Size: {x: 2, y: 4, z: 1.32}
   m_Center: {x: 0.00000001953543, y: 0.000000059604645, z: 0.65549695}
 --- !u!4 &2139166085 stripped
 Transform:

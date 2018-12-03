@@ -24,11 +24,11 @@ public class BulletBehaviour: MonoBehaviour {
         bullet.enabled = true;
         cylinder.enabled = true;
     }
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.tag);
+        string Collision = other.collider.tag;
         //Destroy bullet when it collides with walls.
-        if(other.tag == "Walls" || other.tag == "Player1Bullet" || other.tag == "Player2Bullet")
+        if(Collision == "Walls" || Collision == "Player1Bullet" || Collision == "Player2Bullet")
         {
             var destroyParticles = (GameObject)Instantiate(
             destroyEffect,

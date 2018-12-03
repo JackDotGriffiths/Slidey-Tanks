@@ -114,7 +114,36 @@ public class ScoreControl : MonoBehaviour {
 
     public void Restart()
     {
+        playerscore = 0;
+        Start();
+        EndGameControl.GameOver = false;
+        GameObject.Find("BlueReload").GetComponent<Image>().enabled = true;
+        GameObject.Find("BlueAmmoIcon").GetComponent<Image>().enabled = true;
+
+        GameObject.Find("Game Over Text").GetComponent<Text>().enabled = true;
+
+        GameObject.Find("Retry").GetComponent<Button>().enabled = false;
+        GameObject.Find("Retry").GetComponent<Image>().enabled = false;
+        GameObject.Find("Retry").GetComponentInChildren<Text>().enabled = false;
+
+        GameObject.Find("MainMenuButton").GetComponent<Button>().enabled = false;
+        GameObject.Find("MainMenuButton").GetComponent<Image>().enabled = false;
+        GameObject.Find("MainMenuButton").GetComponentInChildren<Text>().enabled = false;
+
+
+        GameObject.Find("Save Highscore").GetComponent<Button>().enabled = false;
+        GameObject.Find("Save Highscore").GetComponent<Image>().enabled = false;
+        GameObject.Find("Save Highscore").GetComponentInChildren<Text>().enabled = false;
+
+
+        GameObject.Find("InputField").GetComponent<Image>().enabled = false;
+        GameObject.Find("InputField").GetComponent<InputField>().enabled = false;
+        GameObject.Find("InputField").GetComponentInChildren<Text>().enabled = false;
+        GameObject.Find("InputNameText").GetComponent<Text>().enabled = false;
+        GameObject.Find("InputField").GetComponentInChildren<Animator>().enabled = false;
+
+        GameObject.Find("NEWHIGHSCORE").GetComponent<Text>().enabled = false;
         Debug.Log("ReloadMap");
-        //SceneManager.LoadScene("EndlessRunner");
+        SceneManager.LoadScene("EndlessRunner");
     }
 }
