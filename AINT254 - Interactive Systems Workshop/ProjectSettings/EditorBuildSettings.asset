@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerSelect.unity
     guid: f39d2f94f24c6144ea112c4f6565b3cc
   - enabled: 0
-    path: Assets/Scenes/Multiplayer/MapSelection.unity
+    path: 
     guid: c0685a27f9016d540a6fee38d537fec8
   - enabled: 1
     path: Assets/Scenes/Multiplayer/MP - MapSelection.unity
@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlayer/SP - MapSelection.unity
     guid: 6b715ecf1ce615d4783ec1b6241fa01c
+  - enabled: 1
+    path: Assets/Scenes/EndlessRunner.unity
+    guid: 0277a01b246d43443a5153f6d7aaab6b
   m_configObjects: {}
