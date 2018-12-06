@@ -5,6 +5,8 @@ using UnityEngine;
 public class WallSpawnControl : MonoBehaviour {
     public GameObject OrdinaryWall;
     public GameObject BounceyWall;
+    public GameObject OneMoving;
+    public GameObject TwoMoving;
 
     private float SpawningSpeed;
     private float SpawningDeacceleration;
@@ -25,7 +27,7 @@ public class WallSpawnControl : MonoBehaviour {
 
     void Update()
     {
-        if(CameraTransform.SpawnObstacles == true){
+        if (CameraTransform.SpawnObstacles == true) {
             ChooseCombination();
             CameraTransform.SpawnObstacles = false;
         }
@@ -34,7 +36,7 @@ public class WallSpawnControl : MonoBehaviour {
     // Update is called once per frame
     void ChooseCombination() {
         //Random Number chooses the combinaton, call appropriate method to spawn objects
-        int RandomInt = Random.Range(1, 4);
+        int RandomInt = Random.Range(1, 14);
         if (RandomInt == PreviousInt) {
             ChooseCombination();
         }
@@ -45,8 +47,9 @@ public class WallSpawnControl : MonoBehaviour {
 
     }
 
-    void Combination1()
+    void Combination1() // - DONE
     {
+        //Ordinary Wall in Pos1 & Pos4
         var Wall = Instantiate(OrdinaryWall,
             SpawnPos1.position,
             SpawnPos1.rotation);
@@ -54,8 +57,9 @@ public class WallSpawnControl : MonoBehaviour {
             SpawnPos4.position,
             SpawnPos4.rotation);
     }
-    void Combination2()
+    void Combination2() // - DONE
     {
+        //Ordinary Wall in Pos2 & Pos3
         var Wall = Instantiate(OrdinaryWall,
             SpawnPos2.position,
             SpawnPos2.rotation);
@@ -63,8 +67,9 @@ public class WallSpawnControl : MonoBehaviour {
             SpawnPos3.position,
             SpawnPos3.rotation);
     }
-    void Combination3()
+    void Combination3() // - DONE
     {
+        //Ordinary Wall in Pos1 & Pos3
         var Wall = Instantiate(OrdinaryWall,
             SpawnPos1.position,
             SpawnPos1.rotation);
@@ -72,9 +77,104 @@ public class WallSpawnControl : MonoBehaviour {
             SpawnPos3.position,
             SpawnPos3.rotation);
     }
-    void Combination4()
+    void Combination4() // - DONE
     {
+        //Ordinary Wall in Pos2 & Pos4
         var Wall = Instantiate(OrdinaryWall,
+            SpawnPos2.position,
+            SpawnPos2.rotation);
+        var Wall2 = Instantiate(OrdinaryWall,
+            SpawnPos4.position,
+            SpawnPos4.rotation);
+    }
+    void Combination5()
+    {
+        //One Moving Wall in Pos1
+        var Wall = Instantiate(OneMoving,
+            SpawnPos1.position,
+            SpawnPos1.rotation);
+    }
+    void Combination6()
+    {
+        //Two Moving Walls in Pos1
+        var Wall = Instantiate(TwoMoving,
+            SpawnPos1.position,
+            SpawnPos1.rotation);
+    }
+    void Combination7()
+    {
+        //Ordinary Wall in Pos1 & Bouncey Wall in Pos4
+        var Wall = Instantiate(OrdinaryWall,
+            SpawnPos1.position,
+            SpawnPos1.rotation);
+        var Wall2 = Instantiate(BounceyWall,
+            SpawnPos4.position,
+            SpawnPos4.rotation);
+    }
+    void Combination8()
+    {
+        //Bouncey Wall in Pos1 & Ordinary Wall in Pos4
+        var Wall = Instantiate(BounceyWall,
+            SpawnPos1.position,
+            SpawnPos1.rotation);
+        var Wall2 = Instantiate(OrdinaryWall,
+            SpawnPos4.position,
+            SpawnPos4.rotation);
+    }
+    void Combination9()
+    {
+        //Ordinary Wall in Pos2 & Bouncey Wall in Pos3
+        var Wall = Instantiate(OrdinaryWall,
+            SpawnPos2.position,
+            SpawnPos2.rotation);
+        var Wall2 = Instantiate(BounceyWall,
+            SpawnPos3.position,
+            SpawnPos3.rotation);
+    }
+    void Combination10()
+    {
+        //Bouncey Wall in Pos2 & Ordinary Pos3
+        var Wall = Instantiate(BounceyWall,
+            SpawnPos2.position,
+            SpawnPos2.rotation);
+        var Wall2 = Instantiate(OrdinaryWall,
+            SpawnPos3.position,
+            SpawnPos3.rotation);
+    }
+    void Combination11()
+    {
+        //Ordinary Wall in Pos1 & Bouncey Wall in Pos3
+        var Wall = Instantiate(OrdinaryWall,
+            SpawnPos1.position,
+            SpawnPos1.rotation);
+        var Wall2 = Instantiate(BounceyWall,
+            SpawnPos3.position,
+            SpawnPos3.rotation);
+    }
+    void Combination12()
+    {
+        //Bouncey Wall in Pos1 & Ordinary Wall in Pos3
+        var Wall = Instantiate(BounceyWall,
+            SpawnPos1.position,
+            SpawnPos1.rotation);
+        var Wall2 = Instantiate(OrdinaryWall,
+            SpawnPos3.position,
+            SpawnPos3.rotation);
+    }
+    void Combination13()
+    {
+        //Ordinary Wall in Pos2 & Bouncey Wall in Pos4
+        var Wall = Instantiate(OrdinaryWall,
+            SpawnPos2.position,
+            SpawnPos2.rotation);
+        var Wall2 = Instantiate(BounceyWall,
+            SpawnPos4.position,
+            SpawnPos4.rotation);
+    }
+    void Combination14()
+    {
+        //Bouncey Wall in Pos2 & Ordinary Wall in Pos4
+        var Wall = Instantiate(BounceyWall,
             SpawnPos2.position,
             SpawnPos2.rotation);
         var Wall2 = Instantiate(OrdinaryWall,

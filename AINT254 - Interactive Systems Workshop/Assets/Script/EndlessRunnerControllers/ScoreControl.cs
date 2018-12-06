@@ -62,6 +62,8 @@ public class ScoreControl : MonoBehaviour {
         GameObject.Find("MainMenuButton").GetComponent<Button>().enabled = true;
         GameObject.Find("MainMenuButton").GetComponent<Image>().enabled = true;
         GameObject.Find("MainMenuButton").GetComponentInChildren<Text>().enabled = true;
+
+        GameObject.Find("BackgroundOverlay").GetComponent<Image>().enabled = true;
     }
     private void NewHighscoreEnd()
     {
@@ -88,9 +90,10 @@ public class ScoreControl : MonoBehaviour {
         GameObject.Find("InputField").GetComponent<InputField>().enabled = true;
         GameObject.Find("InputField").GetComponentInChildren<Text>().enabled = true;
         GameObject.Find("InputNameText").GetComponent<Text>().enabled = true;
-        GameObject.Find("InputField").GetComponentInChildren<Animator>().enabled = true;
 
         GameObject.Find("NEWHIGHSCORE").GetComponent<Text>().enabled = true;
+
+        GameObject.Find("BackgroundOverlay").GetComponent<Image>().enabled = true;
     }
 
     public void SaveHighscore()
@@ -115,7 +118,8 @@ public class ScoreControl : MonoBehaviour {
     public void Restart()
     {
         playerscore = 0;
-        Start();
+        CameraTransform.CameraSpeed = 0.025f;
+        CameraTransform.CameraAcceleration = 0.002f;
         EndGameControl.GameOver = false;
         GameObject.Find("BlueReload").GetComponent<Image>().enabled = true;
         GameObject.Find("BlueAmmoIcon").GetComponent<Image>().enabled = true;
@@ -140,10 +144,12 @@ public class ScoreControl : MonoBehaviour {
         GameObject.Find("InputField").GetComponent<InputField>().enabled = false;
         GameObject.Find("InputField").GetComponentInChildren<Text>().enabled = false;
         GameObject.Find("InputNameText").GetComponent<Text>().enabled = false;
-        GameObject.Find("InputField").GetComponentInChildren<Animator>().enabled = false;
+
+        GameObject.Find("BackgroundOverlay").GetComponent<Image>().enabled = false;
 
         GameObject.Find("NEWHIGHSCORE").GetComponent<Text>().enabled = false;
         Debug.Log("ReloadMap");
         SceneManager.LoadScene("EndlessRunner");
+        Start();
     }
 }

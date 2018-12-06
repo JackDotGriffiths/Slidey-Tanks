@@ -15,6 +15,7 @@ TagManager:
   - P2Barrel
   - Floor
   - DeathWall
+  - MovingWall
   layers:
   - Default
   - TransparentFX

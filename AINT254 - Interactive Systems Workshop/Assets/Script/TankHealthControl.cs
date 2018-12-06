@@ -143,7 +143,7 @@ public class TankHealthControl : MonoBehaviour {
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
 
                 if (rb != null)
-                    rb.AddExplosionForce(100, explosionPos, 5f, 2.0F);
+                    rb.AddExplosionForce(20, explosionPos, 5f);
 
             }
         }
