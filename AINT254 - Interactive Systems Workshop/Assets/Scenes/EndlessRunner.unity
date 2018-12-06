@@ -16889,7 +16889,7 @@ Prefab:
     - target: {fileID: 224995666158399576, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224781669698135730, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
@@ -16909,7 +16909,7 @@ Prefab:
     - target: {fileID: 224541619719219720, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 224468695233121766, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
@@ -16919,12 +16919,12 @@ Prefab:
     - target: {fileID: 224068982821964476, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 224849573084174644, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224055807435658452, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
@@ -16939,7 +16939,22 @@ Prefab:
     - target: {fileID: 224601111592759842, guid: 617c1292b75b8db408ddb0f43167419b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 224844989634623446, guid: 617c1292b75b8db408ddb0f43167419b,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224844989634623446, guid: 617c1292b75b8db408ddb0f43167419b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224844989634623446, guid: 617c1292b75b8db408ddb0f43167419b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 54
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114151293933297902, guid: 617c1292b75b8db408ddb0f43167419b, type: 2}

@@ -15,6 +15,7 @@ public class ScoreControl : MonoBehaviour {
 
     private void Start()
     {
+        PauseMenuControl.LockControls = false;
         CurrentHighScoreName = PlayerPrefs.GetString("CurrentHolder");
         CurrentHighScore = PlayerPrefs.GetInt("Highscore");
         highscore.text = CurrentHighScoreName + " - " + CurrentHighScore.ToString("0000");
