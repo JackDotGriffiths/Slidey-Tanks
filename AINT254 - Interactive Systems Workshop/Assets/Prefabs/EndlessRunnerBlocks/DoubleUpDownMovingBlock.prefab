@@ -62,6 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4871034951703790}
   - component: {fileID: 95021089764460590}
+  - component: {fileID: 114081357090961300}
   m_Layer: 0
   m_Name: DoubleUpDownMovingBlock
   m_TagString: Untagged
@@ -262,6 +263,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114081357090961300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908564062436174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd9eaaf9d4488446aa84047a02620cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114086082014148664
 MonoBehaviour:
   m_ObjectHideFlags: 1

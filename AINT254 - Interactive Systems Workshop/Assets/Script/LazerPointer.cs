@@ -16,7 +16,7 @@ public class LazerPointer : MonoBehaviour {
         RaycastHit hitPoint;
         if (Physics.Raycast(laserStart.position, transform.forward, out hitPoint, 500))
         {
-            Debug.DrawLine(laserStart.position, laserStart.position + transform.forward);
+            Debug.DrawLine(laserStart.position, laserStart.position + transform.forward,Color.red);
             laserEnd.position = hitPoint.point;
 
             laserOrigin.SetPosition(0, laserStart.position);
