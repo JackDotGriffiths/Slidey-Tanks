@@ -380,7 +380,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077617231998708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.020611, y: -10.30428, z: 1.15}
+  m_LocalPosition: {x: -10.99, y: 0.4757168, z: 1.2305129}
   m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
   m_Children:
   - {fileID: 4181697573279046}
@@ -439,7 +439,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1472360824251844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.14, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4009369717572394}
@@ -1475,7 +1475,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 1
     m_CustomResolution: -1
     m_Strength: 0.036
@@ -1511,9 +1511,6 @@ MonoBehaviour:
   Tank: {fileID: 1077617231998708}
   bulletPrefab: {fileID: 1120813931841244, guid: 3068b9853ae6d584d971d19ed2c2861b,
     type: 2}
-  bulletSpawn: {fileID: 4191731692556846}
-  ReloadTimer: {fileID: 0}
-  ShotChargedAmount: {fileID: 0}
   Shoot: {fileID: 8300000, guid: 164ccf30445eaf948aabaf202481c3b0, type: 3}
   smoke: {fileID: 198799133137068640}
   BarrelBounce: {fileID: 95602439888736136}

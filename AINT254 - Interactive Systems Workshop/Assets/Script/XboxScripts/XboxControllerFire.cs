@@ -20,6 +20,13 @@ public class XboxControllerFire : MonoBehaviour
 
     private bool ReadyToFire = false;
 
+    private void Start()
+    {
+        bulletSpawn = this.transform;
+        ReloadTimer = GameObject.Find("GreenReload").GetComponent<Image>();
+        P2ShotChargedAmount = GameObject.Find("GreenChargeShots").GetComponent<Image>();
+    }
+
     void Update()
     {
         if (PauseMenuControl.LockControls != true)

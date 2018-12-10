@@ -812,7 +812,7 @@ GameObject:
   m_PrefabInternal: {fileID: 1372553008}
 --- !u!114 &1372553011 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114525637121825790, guid: 1df6bb9b202c3764db00c22aae07a0d8,
+  m_PrefabParentObject: {fileID: 114571757171014454, guid: 1df6bb9b202c3764db00c22aae07a0d8,
     type: 2}
   m_PrefabInternal: {fileID: 1372553008}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -839,6 +839,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1372553008}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1372553016 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114454436768544750, guid: 1df6bb9b202c3764db00c22aae07a0d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372553008}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1413630579
 Prefab:
   m_ObjectHideFlags: 0
@@ -949,7 +955,7 @@ Prefab:
         type: 2}
       propertyPath: ReloadTimer
       value: 
-      objectReference: {fileID: 1372553014}
+      objectReference: {fileID: 1372553016}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ea1cbcabc611b64a84a2d574ab88463, type: 2}
   m_IsPrefabParent: 0

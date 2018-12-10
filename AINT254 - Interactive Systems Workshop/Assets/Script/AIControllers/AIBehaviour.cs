@@ -50,13 +50,14 @@ public class AIBehaviour : MonoBehaviour {
                 rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.8f, rigidbody.velocity.y * 0.8f, rigidbody.velocity.z * 0.8f);
                 Debug.DrawLine(TankBarrel.transform.position, enemyRotateTowards, Color.green);
 
+                //Look at Player and fire after 0.8 seconds.
                 TankBarrel.transform.LookAt(hit.point);
-                Invoke("Fire", 0.8f);
+                Invoke("Fire", 1f);
             }
             else if (hit.collider.tag == "Walls" || hit.collider.tag == "Untagged")
             {
-                Quaternion rotation = Quaternion.LookRotation(RandomPos);
-                TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, rotation, 6 * Time.deltaTime);
+                Quaternion newrotation = Quaternion.LookRotation(RandomPos);
+                TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, new Quaternion(0f, newrotation.y,0f,1f), 6 * Time.deltaTime);
                 Invoke("Fire", Chance);
             }
 

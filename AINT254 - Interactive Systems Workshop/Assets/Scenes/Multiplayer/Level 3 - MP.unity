@@ -416,7 +416,7 @@ Prefab:
         type: 2}
       propertyPath: ReloadTimer
       value: 
-      objectReference: {fileID: 849826868}
+      objectReference: {fileID: 849826871}
     - target: {fileID: 114892607854668370, guid: 7ea1cbcabc611b64a84a2d574ab88463,
         type: 2}
       propertyPath: loseText
@@ -602,6 +602,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 849826867}
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &849826870 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114851095764016864, guid: 75c6bf690f9af5041b281f313e35eb1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 849826867}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &849826871 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114451840472959902, guid: 75c6bf690f9af5041b281f313e35eb1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 849826867}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &875424958
 Prefab:
   m_ObjectHideFlags: 0
@@ -787,7 +799,7 @@ Prefab:
         type: 2}
       propertyPath: ReloadTimer
       value: 
-      objectReference: {fileID: 314701218}
+      objectReference: {fileID: 849826870}
     - target: {fileID: 114053207494547568, guid: 45dfd6b5198a1f041a60135b6dc9a15f,
         type: 2}
       propertyPath: loseText
@@ -1079,7 +1091,7 @@ Transform:
   - {fileID: 1080391092}
   - {fileID: 1188172138}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1971838270
 Prefab:

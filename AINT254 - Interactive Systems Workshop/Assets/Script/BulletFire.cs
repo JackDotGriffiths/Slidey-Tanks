@@ -11,15 +11,23 @@ public class BulletFire: MonoBehaviour {
     public GameObject tankBody;
     public GameObject Tank;  
     public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+    private Transform bulletSpawn;
 
-    public Image ReloadTimer;
-    public Image ShotChargedAmount;
+    private Image ReloadTimer;
+    private Image ShotChargedAmount;
     public AudioClip Shoot;
     public ParticleSystem smoke;
     public Animator BarrelBounce;
 
     public static bool FiredBullet;
+
+    private void Start()
+    {
+        bulletSpawn = this.transform;
+        ReloadTimer = GameObject.Find("BlueReload").GetComponent<Image>();
+        ShotChargedAmount = GameObject.Find("BlueChargeShots").GetComponent<Image>();
+        
+    }
 
 
     void Update() {
