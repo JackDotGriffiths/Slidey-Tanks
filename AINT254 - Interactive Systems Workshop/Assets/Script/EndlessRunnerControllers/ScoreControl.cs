@@ -20,6 +20,11 @@ public class ScoreControl : MonoBehaviour {
         CurrentHighScore = PlayerPrefs.GetInt("Highscore");
         highscore.text = CurrentHighScoreName + " - " + CurrentHighScore.ToString("0000");
     }
+
+    public void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
     // Update is called once per frame
     void Update () {
         if (EndGameControl.GameOver == false)
