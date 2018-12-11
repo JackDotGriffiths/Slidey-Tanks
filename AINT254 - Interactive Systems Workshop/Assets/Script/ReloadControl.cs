@@ -11,7 +11,7 @@ public class ReloadControl : MonoBehaviour {
     {
         if (ReloadTimer.fillAmount < 1)
         {
-            ReloadTimer.fillAmount += 0.01f;
+            ReloadTimer.fillAmount += 1.4f * Time.deltaTime;
         }
     }
 }

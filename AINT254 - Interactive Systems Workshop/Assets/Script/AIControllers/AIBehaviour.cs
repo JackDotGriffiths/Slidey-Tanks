@@ -67,7 +67,7 @@ public class AIBehaviour : MonoBehaviour {
 
         if (ReloadTimer.fillAmount < 1)
         {
-            ReloadTimer.fillAmount += 0.02f;
+            ReloadTimer.fillAmount += 1.3f * Time.deltaTime;
         }
 
         PlaceBomb();

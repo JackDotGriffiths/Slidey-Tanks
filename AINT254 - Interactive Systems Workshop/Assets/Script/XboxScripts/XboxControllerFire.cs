@@ -36,7 +36,7 @@ public class XboxControllerFire : MonoBehaviour
             {
                 ReadyToFire = true;
                 //As the button is held down, increase the fillAmount by 0.02 and keep bulletPower = FillAmount
-                P2ShotChargedAmount.fillAmount += 0.02f;
+                P2ShotChargedAmount.fillAmount += 1.3f * Time.deltaTime;
                 bulletPower = P2ShotChargedAmount.fillAmount;
             }
             if (shootAxis == 0 && ReadyToFire == true)

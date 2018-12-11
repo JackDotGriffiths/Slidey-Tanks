@@ -29,13 +29,13 @@ public class BoostPlateForce : MonoBehaviour {
 
     private void Update()
     {
-        if (TrailAmount < 100 && Emit == true)
+        if (TrailAmount < 30 && Emit == true)
         {
             Debug.Log(Tank.GetComponent<Rigidbody>().velocity.magnitude);
             if (Tank.GetComponent<Rigidbody>().velocity.magnitude > 15f)
             {
                 var FireTrailParticles = Instantiate(fireTrail,
-                new Vector3(Tank.transform.position.x,-0.07f,Tank.transform.position.z),
+                new Vector3(Tank.transform.position.x,Tank.transform.position.y-0.07f,Tank.transform.position.z),
                 Tank.transform.rotation);
                 TrailAmount += 1;
                 Destroy(FireTrailParticles, 1.5f);

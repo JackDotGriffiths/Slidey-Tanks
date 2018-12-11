@@ -597,7 +597,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
 --- !u!114 &114880863370272678
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -36,7 +36,7 @@ public class BulletFire: MonoBehaviour {
             if (Input.GetMouseButton(0) && ReloadTimer.fillAmount >= 1)
             {
                 //As the button is held down, increase the fillAmount by 0.02 and keep bulletPower = FillAmount
-                ShotChargedAmount.fillAmount += 0.02f;
+                ShotChargedAmount.fillAmount += 1.3f * Time.deltaTime;
                 bulletPower = ShotChargedAmount.fillAmount;
             }
             if (Input.GetMouseButtonUp(0))
