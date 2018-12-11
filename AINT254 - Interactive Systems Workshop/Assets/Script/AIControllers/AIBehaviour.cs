@@ -42,25 +42,27 @@ public class AIBehaviour : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Linecast(TankBarrel.transform.position,enemy.transform.position, out hit))
         {
-            Debug.DrawLine(TankBarrel.transform.position, hit.point, Color.cyan);
-            if (hit.collider.tag == "Player1")
+            if (PauseMenuControl.LockControls == false)
             {
-                //Make the tank start braking if it can see the player.
-                Rigidbody rigidbody = GetComponent<Rigidbody>();
-                rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.8f, rigidbody.velocity.y * 0.8f, rigidbody.velocity.z * 0.8f);
-                Debug.DrawLine(TankBarrel.transform.position, enemyRotateTowards, Color.green);
+                Debug.DrawLine(TankBarrel.transform.position, hit.point, Color.cyan);
+                if (hit.collider.tag == "Player1")
+                {
+                    //Make the tank start braking if it can see the player.
+                    Rigidbody rigidbody = GetComponent<Rigidbody>();
+                    rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.8f, rigidbody.velocity.y * 0.8f, rigidbody.velocity.z * 0.8f);
+                    Debug.DrawLine(TankBarrel.transform.position, enemyRotateTowards, Color.green);
 
-                //Look at Player and fire after 0.8 seconds.
-                TankBarrel.transform.LookAt(hit.point);
-                Invoke("Fire", 1f);
+                    //Look at Player and fire after 0.8 seconds.
+                    TankBarrel.transform.LookAt(hit.point);
+                    Invoke("Fire", 1f);
+                }
+                else if (hit.collider.tag == "Walls" || hit.collider.tag == "Untagged")
+                {
+                    Quaternion newrotation = Quaternion.LookRotation(RandomPos);
+                    TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, new Quaternion(0f, newrotation.y, 0f, 1f), 6 * Time.deltaTime);
+                    Invoke("Fire", Chance);
+                }
             }
-            else if (hit.collider.tag == "Walls" || hit.collider.tag == "Untagged")
-            {
-                Quaternion newrotation = Quaternion.LookRotation(RandomPos);
-                TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, new Quaternion(0f, newrotation.y,0f,1f), 6 * Time.deltaTime);
-                Invoke("Fire", Chance);
-            }
-
         }
 
         if (ReloadTimer.fillAmount < 1)
@@ -74,7 +76,7 @@ public class AIBehaviour : MonoBehaviour {
 
     private void Fire()
     {
-        if (ReloadTimer.fillAmount == 1)
+        if (ReloadTimer.fillAmount == 1 && PauseMenuControl.LockControls == false)
         {
             if (Time.timeScale == 1)
             {

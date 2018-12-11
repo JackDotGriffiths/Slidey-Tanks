@@ -2,40 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuControl : MonoBehaviour {
 
     private bool Paused;
-    public Button buttonRestart;
-
     public static bool LockControls;
+
+    public GameObject PausedUI;
+    public GameObject CurrentUI;
+
+    public Text LevelName;
+    
     
 
     // Use this for initialization
     void Start () {
         Paused = false;
         LockControls = false;
+        LevelName.text = SceneManager.GetActiveScene().name;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape) && Paused == false)
         {
+            PauseRigidbodies();
             LockControls = true;
             Paused = true;
-            buttonRestart.GetComponent<Button>().enabled = true;
-            buttonRestart.GetComponent<Image>().enabled = true;
-            buttonRestart.GetComponentInChildren<Text>().enabled = true;
-            PauseRigidbodies();
+            PausedUI.SetActive(true);
+            CurrentUI.SetActive(false);
 
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && Paused == true)
         {
             LockControls = false;
             Paused = false;
-            buttonRestart.GetComponent<Button>().enabled = false;
-            buttonRestart.GetComponent<Image>().enabled = false;
-            buttonRestart.GetComponentInChildren<Text>().enabled = false; ;
+            PausedUI.SetActive(false);
+            CurrentUI.SetActive(true);
         }
 	}
 
