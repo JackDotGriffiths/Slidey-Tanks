@@ -6,18 +6,21 @@ public class ObectCollisionForces : MonoBehaviour {
 
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         string ObjectTag;
-        ObjectTag = other.tag;
-        if(ObjectTag == "Player1" || ObjectTag == "Player2")
+        ObjectTag = other.gameObject.tag;
+        if (other.name != "Tank")
         {
-            Rigidbody TankRigidbody;
-            TankRigidbody = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 Direction = other.gameObject.transform.position - this.transform.position;
+            if (ObjectTag == "Player1" || ObjectTag == "Player2")
+            {
+                Debug.Log(other.name);
+                Rigidbody TankRigidbody;
+                TankRigidbody = other.GetComponent<Rigidbody>();
+                Vector3 Direction = other.gameObject.transform.position - this.transform.position;
 
-            TankRigidbody.AddForce(Direction * 400);
-            
+                TankRigidbody.AddForce(Direction * 50);
+            }
         }
     }
 }

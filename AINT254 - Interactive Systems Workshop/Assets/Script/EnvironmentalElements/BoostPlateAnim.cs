@@ -17,14 +17,9 @@ public class BoostPlateAnim : MonoBehaviour {
     private float nextActionTime = 0.0f;
     public float period = 0.1f;
 
-    void Update()
+    void Start()
     {
-        //Code from "duck" on forum post https://answers.unity.com/questions/17131/execute-code-every-x-seconds-with-update.html
-        if (Time.time > nextActionTime)
-        {
-            nextActionTime += period;
-            GlowStep();
-        }
+        InvokeRepeating("GlowStep", 0, 0.5f);
     }
 
     private void GlowStep()

@@ -11,7 +11,7 @@ public class TankReloadEndlessControl : MonoBehaviour {
     {
         if (ReloadTimer.fillAmount < 1)
         {
-            ReloadTimer.fillAmount += 0.05f;
+            ReloadTimer.fillAmount += 2f * Time.deltaTime;
         }
     }
 }

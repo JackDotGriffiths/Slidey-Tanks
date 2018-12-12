@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e048b53f7b02ac04dafa19e01df49f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 9
+  SceneToLoad: 7
 --- !u!222 &222042215857362568
 CanvasRenderer:
   m_ObjectHideFlags: 1

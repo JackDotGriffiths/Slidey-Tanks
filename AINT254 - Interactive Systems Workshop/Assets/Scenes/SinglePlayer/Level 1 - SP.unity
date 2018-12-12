@@ -940,12 +940,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317878529}
   m_Mesh: {fileID: 4300000, guid: ffe82cad97d8d1e45b33c42f7e909637, type: 3}
---- !u!114 &325459462 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114899928892090396, guid: 1df6bb9b202c3764db00c22aae07a0d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1412162414}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &326728997 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: ffe82cad97d8d1e45b33c42f7e909637, type: 3}
@@ -1547,9 +1541,24 @@ Prefab:
       propertyPath: ReloadTimer
       value: 
       objectReference: {fileID: 1633845744}
+    - target: {fileID: 114283097708967056, guid: 46c8f477fb7bc404d89730b050129efa,
+        type: 2}
+      propertyPath: loseText
+      value: 
+      objectReference: {fileID: 565200845}
+    - target: {fileID: 114283097708967056, guid: 46c8f477fb7bc404d89730b050129efa,
+        type: 2}
+      propertyPath: buttonRestart
+      value: 
+      objectReference: {fileID: 1602954814}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46c8f477fb7bc404d89730b050129efa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &565200845 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1882311118674692, guid: 1df6bb9b202c3764db00c22aae07a0d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1412162414}
 --- !u!4 &572897251 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: ffe82cad97d8d1e45b33c42f7e909637, type: 3}
@@ -3409,16 +3418,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114126149002348850, guid: 7ea1cbcabc611b64a84a2d574ab88463,
+    - target: {fileID: 114371614838067696, guid: 7ea1cbcabc611b64a84a2d574ab88463,
         type: 2}
       propertyPath: ReloadTimer
       value: 
       objectReference: {fileID: 867696302}
-    - target: {fileID: 114126149002348850, guid: 7ea1cbcabc611b64a84a2d574ab88463,
-        type: 2}
-      propertyPath: ShotChargedAmount
-      value: 
-      objectReference: {fileID: 325459462}
     - target: {fileID: 114892607854668370, guid: 7ea1cbcabc611b64a84a2d574ab88463,
         type: 2}
       propertyPath: loseText
@@ -3429,11 +3433,6 @@ Prefab:
       propertyPath: buttonRestart
       value: 
       objectReference: {fileID: 1602954814}
-    - target: {fileID: 114371614838067696, guid: 7ea1cbcabc611b64a84a2d574ab88463,
-        type: 2}
-      propertyPath: ReloadTimer
-      value: 
-      objectReference: {fileID: 867696302}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7ea1cbcabc611b64a84a2d574ab88463, type: 2}
   m_IsPrefabParent: 0
@@ -3689,10 +3688,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114571757171014454, guid: 1df6bb9b202c3764db00c22aae07a0d8,
+    - target: {fileID: 224125501146982728, guid: 1df6bb9b202c3764db00c22aae07a0d8,
         type: 2}
-      propertyPath: m_FillOrigin
-      value: 2
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 224125501146982728, guid: 1df6bb9b202c3764db00c22aae07a0d8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1df6bb9b202c3764db00c22aae07a0d8, type: 2}
@@ -4813,11 +4817,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114983731827854940, guid: 210b37f0334e5c14b964ea1b86dfcaca,
-        type: 2}
-      propertyPath: SceneToLoad
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 210b37f0334e5c14b964ea1b86dfcaca, type: 2}

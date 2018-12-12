@@ -101,7 +101,6 @@ public class ScoreControl : MonoBehaviour {
 
         GameObject.Find("BackgroundOverlay").GetComponent<Image>().enabled = true;
     }
-
     public void SaveHighscore()
     {
         //When button is pressed & box has text in it - Save Highscore & name in player prefs - Update the display at the top - hide input and button
@@ -119,8 +118,6 @@ public class ScoreControl : MonoBehaviour {
             GameObject.Find("InputField").SetActive(false);
         }
     }
-
-
     public void Restart()
     {
         playerscore = 0;
@@ -157,5 +154,9 @@ public class ScoreControl : MonoBehaviour {
         Debug.Log("ReloadMap");
         SceneManager.LoadScene("EndlessRunner");
         Start();
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

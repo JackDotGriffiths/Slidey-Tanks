@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class AIBehaviour : MonoBehaviour {
 
     public GameObject enemy;
-    public Vector3 FireDirection;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public ParticleSystem smoke;
@@ -24,57 +23,64 @@ public class AIBehaviour : MonoBehaviour {
     public static bool BombPlaced = false;
     private int Chance = 0;
 
-    private void Update()
+    private void Start()
     {
-        if (Time.time > Timer)
-        {
-            Timer = Time.time + TimerPeriod;
-            RandomPos = new Vector3(Random.Range(-100f, 100f), TankBarrel.transform.position.y, Random.Range(-100f, 100f));
-            Chance = Random.Range(3, 20);
-        }
+        InvokeRepeating("RandomGen", 1f, 1f);
     }
 
     void FixedUpdate()
     {
         Debug.DrawLine(TankBarrel.transform.position, enemy.transform.position, Color.red);
-        Vector3 enemyRotateTowards = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
-
         RaycastHit hit;
-        if (Physics.Linecast(TankBarrel.transform.position,enemy.transform.position, out hit))
+
+        if (Physics.Linecast(transform.position,enemy.transform.position, out hit))
         {
             if (PauseMenuControl.LockControls == false)
             {
-                Debug.DrawLine(TankBarrel.transform.position, hit.point, Color.cyan);
                 if (hit.collider.tag == "Player1")
                 {
                     //Make the tank start braking if it can see the player.
                     Rigidbody rigidbody = GetComponent<Rigidbody>();
                     rigidbody.velocity = new Vector3(rigidbody.velocity.x * 0.8f, rigidbody.velocity.y * 0.8f, rigidbody.velocity.z * 0.8f);
-                    Debug.DrawLine(TankBarrel.transform.position, enemyRotateTowards, Color.green);
 
-                    //Look at Player and fire after 0.8 seconds.
-                    TankBarrel.transform.LookAt(hit.point);
-                    Invoke("Fire", 1f);
+                    //Look at Player and fire.
+                    Vector3 target = hit.point - transform.position;
+                    Debug.DrawLine(transform.position, target, Color.gray);
+
+                    TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, Quaternion.LookRotation(target), Time.deltaTime * 6);
+                    Fire();
+
+                    if (Random.value < .5)
+                    {
+                        Invoke("Fire", Chance);
+                    }
                 }
                 else if (hit.collider.tag == "Walls" || hit.collider.tag == "Untagged")
                 {
-                    Quaternion newrotation = Quaternion.LookRotation(RandomPos);
-                    TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, new Quaternion(0f, newrotation.y, 0f, 1f), 6 * Time.deltaTime);
-                    Invoke("Fire", Chance);
+                   Invoke("FireTowardsPlayer",Chance/10);
                 }
             }
         }
-
         if (ReloadTimer.fillAmount < 1)
         {
             ReloadTimer.fillAmount += 1.3f * Time.deltaTime;
         }
-
-        PlaceBomb();
-
     }
+    void RandomGen()
+    {
+        Timer = Time.deltaTime + TimerPeriod;
+        RandomPos = new Vector3(Random.Range(-100f, 100f), TankBarrel.transform.position.y, Random.Range(-100f, 100f));
+        Chance = Random.Range(1, 20);
+    }
+    void FireTowardsPlayer()
+    {
+        Vector3 enemyRotateTowards = new Vector3(enemy.transform.position.x, transform.position.y, enemy.transform.position.z);
+        Quaternion newrotation = Quaternion.LookRotation(-1 * enemyRotateTowards);
+        TankBarrel.transform.rotation = Quaternion.Lerp(TankBarrel.transform.rotation, new Quaternion(0f, newrotation.y , 0f, 1f), 6 * Time.deltaTime);
 
-    private void Fire()
+        Fire();
+    }
+    void Fire()
     {
         if (ReloadTimer.fillAmount == 1 && PauseMenuControl.LockControls == false)
         {
@@ -106,23 +112,9 @@ public class AIBehaviour : MonoBehaviour {
 
         }
     }
-
     void Recoil()
     {
         Vector3 direction = Tank.transform.position - bulletSpawn.transform.position;
         Tank.GetComponent<Rigidbody>().AddForce(direction.normalized * 1000);
-    }
-
-    void PlaceBomb()
-    {
-        if (BombPlaced == false && Chance == 1)
-            {
-                Debug.Log("PlaceBomb");
-                var Bomb = (GameObject)Instantiate(
-                AIBombPrefab,
-                transform.position,
-                transform.rotation);
-                BombPlaced = true;
-            }
     }
 }
