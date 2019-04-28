@@ -1,5 +1,5 @@
 # Slidey Tanks
-Slidey Tanks PC Game
+Slidey Tanks PC Game - 
 A Recoil Based top-down shooter!
 
 Project Description
